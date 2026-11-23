@@ -54,9 +54,7 @@ body.loading{overflow:hidden}
 .reveal-delay-1{transition-delay:.1s}.reveal-delay-2{transition-delay:.2s}.reveal-delay-3{transition-delay:.3s}
 .line-grow{width:0;height:1px;background:var(--line);transition:width 1.2s cubic-bezier(.22,1,.36,1)}
 .line-grow.visible{width:100%}
-.hero-canvas-wrap{position:absolute;inset:0;z-index:0}
-.hero-canvas-wrap canvas{display:block;width:100%!important;height:100%!important}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(246,242,236,.18),rgba(246,242,236,.05) 35%,rgba(246,242,236,.55) 100%);pointer-events:none}
+/* hero background kept simple to avoid layout shift */
 .scroll-hint{writing-mode:vertical-rl;font-size:.66rem;letter-spacing:.25em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:1rem}
 .scroll-hint::before{content:"";width:1px;height:56px;background:linear-gradient(to bottom,var(--muted),transparent);animation:scrollPulse 2.4s ease-in-out infinite}
 @keyframes scrollPulse{0%,100%{opacity:.2;transform:scaleY(.5);transform-origin:top}50%{opacity:1;transform:scaleY(1)}}

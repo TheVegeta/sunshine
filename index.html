@@ -20,9 +20,7 @@
     }
   </script>
   <link rel="stylesheet" href="assets/css/style.css">
-  <script type="importmap">
-    { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
-  </script>
+
 </head>
 <body class="loading grain">
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -54,9 +52,8 @@
 
   <main id="main-content">
     <!-- HERO -->
-    <section class="relative min-h-screen flex items-center overflow-hidden pt-28 pb-16 md:pb-20">
-      <div id="hero-canvas" class="hero-canvas-wrap"></div>
-      <div class="hero-overlay"></div>
+    <section class="relative min-h-[100svh] flex items-center overflow-hidden pt-28 pb-16 md:pb-20 bg-sand">
+      <div class="absolute inset-0 pointer-events-none" aria-hidden="true" style="background:radial-gradient(ellipse at 20% 30%, rgba(239,232,223,.9), transparent 55%), radial-gradient(ellipse at 80% 70%, rgba(139,115,88,.08), transparent 45%);"></div>
       <div class="relative z-10 max-w-[1400px] mx-auto px-6 md:px-10 w-full grid md:grid-cols-12 gap-10 md:gap-8 items-center">
         <div class="md:col-span-6 lg:col-span-6">
           <div class="flex items-center gap-4 mb-7 reveal">
@@ -84,7 +81,7 @@
         <div class="md:col-span-6 lg:col-span-5 lg:col-start-8 reveal reveal-delay-2">
           <div class="relative">
             <div class="img-frame aspect-[4/5] max-h-[75vh] shadow-[0_30px_80px_-24px_rgba(46,41,37,.22)]">
-              <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=1200&q=80" alt="Handcrafted Sunshine jewelry arranged in warm natural light" loading="eager" fetchpriority="high" width="1200" height="1500">
+              <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=1200&q=80" alt="Handcrafted Sunshine jewelry arranged in warm natural light" loading="eager" fetchpriority="high" decoding="async" width="1200" height="1500">
             </div>
             <div class="absolute -left-4 md:-left-8 bottom-8 md:bottom-12 bg-sand/90 backdrop-blur-sm border border-[var(--line)] px-5 py-4 shadow-sm">
               <p class="eyebrow !mb-1">Small batch</p>
@@ -248,10 +245,6 @@
     </div>
   </footer>
 
-  <script type="module">
-    import { initHeroCanvas } from './assets/js/three-hero.js';
-    initHeroCanvas();
-  </script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>
