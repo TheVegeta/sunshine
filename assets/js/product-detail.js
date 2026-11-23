@@ -1,8 +1,10 @@
 (function () {
-  function q(sel) { return document.querySelector(sel); }
+  function q(sel) {
+    return document.querySelector(sel);
+  }
 
   function renderNotFound() {
-    const wrap = q('#product-detail');
+    const wrap = q("#product-detail");
     if (!wrap) return;
     wrap.innerHTML = `
       <div class="max-w-[1400px] mx-auto px-6 md:px-10 py-24 md:py-32 text-center">
@@ -18,7 +20,7 @@
       <article class="reveal">
         <a href="product.html?id=${p.id}" class="block group no-underline text-inherit">
           <div class="img-frame aspect-[3/4] mb-5">
-            <img src="${p.image.replace('w=1400', 'w=900')}" alt="${p.alt}" loading="lazy" width="900" height="1200">
+            <img src="${p.image.replace("w=1400", "w=900")}" alt="${p.alt}" loading="lazy" width="900" height="1200">
           </div>
           <p class="eyebrow mb-2">${p.label}</p>
           <h3 class="serif text-2xl md:text-3xl">${p.title}</h3>
@@ -27,11 +29,13 @@
   }
 
   function initProductDetail() {
-    const wrap = q('#product-detail');
+    const wrap = q("#product-detail");
     if (!wrap) return;
     const products = window.SUNSHINE_PRODUCTS || [];
-    const getById = window.getSunshineProductById || ((id) => products.find(p => p.id === id));
-    const id = new URLSearchParams(window.location.search).get('id');
+    const getById =
+      window.getSunshineProductById ||
+      ((id) => products.find((p) => p.id === id));
+    const id = new URLSearchParams(window.location.search).get("id");
     const product = getById(id);
 
     if (!product) {
@@ -46,34 +50,50 @@
 
     document.title = `${product.title} — Sunshine Handmade Jewelry`;
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute('content', product.desc);
+    if (meta) meta.setAttribute("content", product.desc);
 
     const pageUrl = `https://thevegeta.github.io/sunshine/product.html?id=${product.id}`;
-    const setMeta = (selector, attr, value) => { const el = document.querySelector(selector); if (el) el.setAttribute(attr, value); };
-    setMeta('link[rel="canonical"]', 'href', pageUrl);
-    setMeta('meta[property="og:title"]', 'content', `${product.title} — Sunshine Handmade Jewelry`);
-    setMeta('meta[property="og:description"]', 'content', product.desc);
-    setMeta('meta[property="og:url"]', 'content', pageUrl);
-    setMeta('meta[property="og:image"]', 'content', product.image);
-    setMeta('meta[property="og:image:alt"]', 'content', product.alt);
-    setMeta('meta[name="twitter:title"]', 'content', `${product.title} — Sunshine Handmade Jewelry`);
-    setMeta('meta[name="twitter:description"]', 'content', product.desc);
-    setMeta('meta[name="twitter:image"]', 'content', product.image);
+    const setMeta = (selector, attr, value) => {
+      const el = document.querySelector(selector);
+      if (el) el.setAttribute(attr, value);
+    };
+    setMeta('link[rel="canonical"]', "href", pageUrl);
+    setMeta(
+      'meta[property="og:title"]',
+      "content",
+      `${product.title} — Sunshine Handmade Jewelry`,
+    );
+    setMeta('meta[property="og:description"]', "content", product.desc);
+    setMeta('meta[property="og:url"]', "content", pageUrl);
+    setMeta('meta[property="og:image"]', "content", product.image);
+    setMeta('meta[property="og:image:alt"]', "content", product.alt);
+    setMeta(
+      'meta[name="twitter:title"]',
+      "content",
+      `${product.title} — Sunshine Handmade Jewelry`,
+    );
+    setMeta('meta[name="twitter:description"]', "content", product.desc);
+    setMeta('meta[name="twitter:image"]', "content", product.image);
 
-    let ld = document.getElementById('product-jsonld');
-    if (!ld) { ld = document.createElement('script'); ld.type = 'application/ld+json'; ld.id = 'product-jsonld'; document.head.appendChild(ld); }
+    let ld = document.getElementById("product-jsonld");
+    if (!ld) {
+      ld = document.createElement("script");
+      ld.type = "application/ld+json";
+      ld.id = "product-jsonld";
+      document.head.appendChild(ld);
+    }
     ld.textContent = JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'Product',
+      "@context": "https://schema.org",
+      "@type": "Product",
       name: product.title,
       description: product.desc,
       image: [product.image],
       category: product.label,
-      brand: { '@type': 'Brand', name: 'Sunshine Handmade Jewelry' },
-      url: pageUrl
+      brand: { "@type": "Brand", name: "Sunshine Handmade Jewelry" },
+      url: pageUrl,
     });
 
-    const related = products.filter(p => p.id !== product.id).slice(0, 3);
+    const related = products.filter((p) => p.id !== product.id).slice(0, 3);
     wrap.innerHTML = `
       <section class="px-6 md:px-10 pt-32 md:pt-40 pb-16 md:pb-24">
         <div class="max-w-[1400px] mx-auto">
@@ -112,7 +132,7 @@
             <a href="collections.html" class="arrow-link">View all pieces <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
           </div>
           <div class="grid md:grid-cols-3 gap-8 md:gap-10">
-            ${related.map(productCard).join('')}
+            ${related.map(productCard).join("")}
           </div>
         </div>
       </section>
@@ -135,12 +155,14 @@
     if (window.Sunshine?.refresh) {
       window.Sunshine.refresh();
     } else {
-      document.querySelectorAll('.reveal, .line-grow').forEach(el => el.classList.add('visible'));
+      document
+        .querySelectorAll(".reveal, .line-grow")
+        .forEach((el) => el.classList.add("visible"));
     }
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', boot);
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", boot);
   } else {
     boot();
   }
