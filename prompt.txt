@@ -1,40 +1,22 @@
-Role: Expert Creative Frontend Developer & UI/UX Designer.
+Build a creative, unique, and minimal multi-page HTML website for a handmade jewelry brand called "Sunshine" (Sunshine Jewelry), a small homemade handicraft project created by an artisan named Namita. 
 
-Objective: Build a unique, minimal, and deeply aesthetic multi-page HTML website for "Sunshine", an artisanal, handcrafted jewelry brand created by Namita as a personal homemade project.
+### Core Requirements & Aesthetic Direction
+- **Vibe & Feel:** The overall experience must feel deeply aesthetic, organic, natural, and personal—avoiding generic e-commerce templates. Keep the UI minimal with generous whitespace, refined editorial typography, and tactile, gentle micro-interactions.
+- **No Color Prescriptions:** Do not enforce specific hex codes or color palettes; let the aesthetic feel warm, natural, and harmonious on its own.
+- **Tech Stack:** Pure HTML5, Vanilla JavaScript, Tailwind CSS (via CDN), and Three.js (via CDN).
+- **Imagery:** Strictly use real, high-resolution, aesthetic photography URLs from Unsplash (e.g., handmade jewelry, artisan crafting, natural textures, minimal portraits). Do NOT generate custom images, placeholders, or SVGs as image substitutes.
 
-Tech Stack & Constraints:
-- Multi-page architecture using separate, linked HTML files (e.g., index.html, collections.html, story.html, contact.html). Do not build a single-page application.
-- Use Tailwind CSS via CDN for layout and styling.
-- Integrate Three.js for subtle, organic, and interactive 3D elements (e.g., floating abstract organic shapes, delicate metallic/glass-like particles, or subtle mouse-reactive background depth).
-- Smooth, fluid page transitions and micro-animations (using vanilla JS or lightweight libraries like GSAP/Lenis via CDN) that feel natural, unhurried, and tactile.
-- Imagery: Use high-resolution, curated Unsplash image URLs exclusively for all jewelry, lifestyle, and crafting photography. Do not generate images or use broken placeholders.
-- Strict Exclusion: Do not include any specific color hex codes, RGB values, or named color palettes in the design; let the visual hierarchy rely on contrast, negative space, typography, and natural photographic tones.
+### Multi-Page Architecture
+Create separate, interconnected HTML files with seamless page transitions and a persistent minimal navigation bar and footer:
+1. `index.html` (Home): An editorial landing page introducing "Sunshine" by Namita, featuring an interactive Three.js hero canvas, a featured collection showcase, and a glimpse into the handmade process.
+2. `collections.html` (Collections): A curated, filterable gallery showcasing Namita's handcrafted designs across various collections (e.g., Everyday Minimal, Nature-Inspired, Statement Pieces) with smooth hover animations and quick-view modals.
+3. `story.html` (About / Craft): The personal story of Namita and how Sunshine started as a small homemade project, highlighting the slow-fashion philosophy, raw materials, and step-by-step handcrafting process.
+4. `contact.html` (Inquiries & Custom Orders): A minimal custom-order inquiry form and direct connection hub for bespoke pieces.
 
-Brand Identity & Content:
-- Brand Name: Sunshine
-- Creator: Namita
-- Vibe: Intimate, organic, slow-made, minimal, gallery-like, and deeply personal. Avoid generic corporate e-commerce templates; treat each piece like a small wearable sculpture.
-- Social Integration: Feature the official Instagram handle (@sunshine_handicraft_n) linking directly to https://www.instagram.com/sunshine_handicraft_n/ as the primary hub for inquiries, custom orders, and community connection.
+### Three.js & Animation Guidelines
+- **Three.js Integration:** Embed a subtle, lightweight, interactive Three.js WebGL scene (such as floating, gently rotating organic abstract forms, delicate metallic/beaded rings, or soft drifting light particles) that responds smoothly to cursor movement and scroll without overpowering the minimal layout.
+- **Motion & Transitions:** Implement fluid scroll-triggered reveals, smooth parallax image framing, magnetic buttons, and soft page-fade transitions so every interaction feels natural and unhurried.
 
-Required Pages & Structure:
-1. Home (index.html):
-   - Atmospheric hero section featuring a subtle Three.js interactive canvas layered behind minimal, editorial typography.
-   - Curated spotlight of signature handcrafted pieces with asymmetric, gallery-style grid layouts and smooth hover states.
-   - Brief teaser of Namita's homemade philosophy and a seamless link to the Instagram showcase.
-
-2. Collections (collections.html):
-   - Filterable or categorized showcase of various handcrafted designs and collections (e.g., Everyday Minimal, Statement Pieces, Custom Creations).
-   - Interactive lookbook feel with fluid image reveals, tactile hover animations, and direct "Inquire via Instagram" prompts for each piece instead of a generic checkout cart.
-
-3. The Story (story.html):
-   - An intimate, editorial narrative about Namita, the origin of Sunshine as a homemade passion project, and the slow, hands-on crafting process.
-   - Asymmetric visual storytelling pairing Unsplash studio/crafting imagery with poetic, minimal typography.
-
-4. Connect & Custom Orders (contact.html):
-   - Minimalist layout guiding visitors to connect for bespoke designs and orders.
-   - Prominent, interactive call-to-action directing users to https://www.instagram.com/sunshine_handicraft_n/, accompanied by a simple, clean inquiry form and FAQ regarding handmade timelines.
-
-Design & UX Direction:
-- Typography: Pair an expressive, organic editorial serif for headings with a clean, understated sans-serif for body text and navigation.
-- Layout: Embrace generous whitespace, asymmetrical compositions, custom cursor interactions, and smooth scroll inertia.
-- Ensure complete responsiveness across desktop and mobile viewports while maintaining the delicate, sculptural aesthetic.
+### Brand & Social Integration
+- Prominently and tastefully feature Namita's story as the sole maker behind Sunshine.
+- Include direct, working links and a curated social showcase section pointing to the official Instagram handle: https://www.instagram.com/sunshine_handicraft_n/

@@ -2,243 +2,256 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sunshine — Handmade jewellery by Namita</title>
-  <meta name="description" content="Sunshine is a slow-made, homemade jewellery atelier by Namita. Small batches of wearable sculptures, shaped by hand.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sunshine — Handmade Jewelry by Namita</title>
+  <meta name="description" content="Sunshine is a small homemade jewelry project by Namita. Slow-made, handcrafted pieces shaped with care, warmth, and intention.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { serif: ['"Cormorant Garamond"', 'Georgia', 'serif'], sans: ['Manrope', 'system-ui', 'sans-serif'] },
+          colors: { sand: '#f6f2ec', stonewarm: '#efe8df', ink: '#2e2925', muted: '#746d66', accent: '#8b7358' }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="assets/css/style.css">
   <script type="importmap">
-    { "imports": {
-        "three": "https://cdn.jsdelivr.net/npm/three@0.186.0/build/three.module.js",
-        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.186.0/examples/jsm/"
-      } }
+    { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
   </script>
 </head>
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <!-- Curtain used for every internal page change -->
-  <div class="page-curtain is-active" aria-hidden="true">
-    <div class="page-curtain__inner"></div>
-    <span class="page-curtain__mark">sunshine.</span>
-  </div>
-
-  <!-- Morphing trailing cursor -->
-  <div class="cursor" aria-hidden="true">
-    <div class="cursor__ring"><span class="cursor__label"></span></div>
-    <div class="cursor__dot"></div>
-  </div>
+<body class="loading grain">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="page-curtain" aria-hidden="true"><div class="curtain-mark">sun<span>shine</span></div></div>
 
   <header class="site-header">
-    <a class="brand magnetic" href="index.html" data-cursor="Home" aria-label="Sunshine, home">
-      <span class="brand__mark">s<span class="brand__dot">.</span></span>
-      <span class="brand__name">Sunshine<em>handmade by Namita</em></span>
-    </a>
-    <nav class="site-nav" id="site-nav" aria-label="Primary">
-      <a href="index.html" aria-current="page">Home</a>
-      <a href="collections.html">Collections</a>
-      <a href="about.html">The story</a>
-      <a href="lookbook.html">Lookbook</a>
-      <a href="contact.html">Connect</a>
-    </nav>
-    <div class="header-tail">
-      <span class="header-note">Slow-made · Small batch</span>
-      <a class="social-link magnetic" href="https://www.instagram.com/sunshine_handicraft_n/" target="_blank" rel="noopener noreferrer" data-cursor="Follow">
-        Instagram <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 19 19 5M9 5h10v10"/></svg>
-      </a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <div class="max-w-[1400px] mx-auto px-6 md:px-10 py-5 flex items-center justify-between gap-6">
+      <a href="index.html" class="font-serif text-2xl md:text-3xl tracking-wide text-ink no-underline" aria-label="Sunshine home">sun<span class="italic text-accent">shine</span></a>
+      <nav class="hidden md:flex items-center gap-8" aria-label="Primary">
+        <a class="nav-link" href="index.html" aria-current="page">Home</a>
+        <a class="nav-link" href="collections.html">Collections</a>
+        <a class="nav-link" href="story.html">Our Story</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+      </nav>
+      <div class="flex items-center gap-4">
+        <a href="https://www.instagram.com/sunshine_handicraft_n/" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex nav-link" aria-label="Sunshine on Instagram">Instagram</a>
+        <button class="menu-btn md:hidden" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span></button>
+      </div>
     </div>
   </header>
 
-  <main id="main">
-    <!-- Atmospheric hero: WebGL canvas sits behind editorial type -->
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="webgl-hero" aria-hidden="true"></div>
-      <div class="wrap hero__inner">
-        <p class="hero__eyebrow mono muted">An homemade jewellery atelier · by Namita</p>
-        <h1 class="display t-hero" id="hero-title">
-          <span class="line-mask"><span>Little things,</span></span>
-          <span class="line-mask"><span><em>made to last.</em></span></span>
-        </h1>
-        <div class="hero__meta">
-          <p class="mono faint" style="grid-column:1/4">01 — The atelier</p>
-          <div class="hero__copy">
-            <p class="t-lede">Wearable sculptures shaped slowly, one at a time. No factories, no rush — just hands, material and a little patience.</p>
-          </div>
-          <div class="hero__aside">
-            <p class="mono">Made by hand<br>Wherever Namita is</p>
-          </div>
-        </div>
-      </div>
-      <div class="hero__scroll" aria-hidden="true">
-        <span class="hero__scroll-line"></span>
-        <span class="mono faint">Scroll gently</span>
-      </div>
-      <div class="hero__index mono faint" aria-hidden="true"><span>Home</span><span>01 / 05</span></div>
-    </section>
+  <div class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="collections.html">Collections</a>
+    <a href="story.html">Our Story</a>
+    <a href="contact.html">Contact</a>
+    <a href="https://www.instagram.com/sunshine_handicraft_n/" target="_blank" rel="noopener noreferrer" class="!font-sans !text-sm !tracking-[.2em] !uppercase !text-muted !mt-4">Instagram ↗</a>
+  </div>
 
-    <!-- Collection index with a floating image preview on fine pointers -->
-    <section class="section fibre" id="collections" aria-labelledby="collections-title">
-      <div class="wrap">
-        <div class="collections-head" data-reveal>
-          <h2 class="display t-section" id="collections-title">
-            <span class="line-mask"><span>Selected</span></span>
-            <span class="line-mask"><span><em>works.</em></span></span>
-          </h2>
-          <p class="mono muted">A rotating edit of small batches. Each piece is made once, then perhaps never again.</p>
-        </div>
-        <div class="collection-list">
-          <a class="collection-row magnetic" href="collections.html" data-preview="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=900&q=85" data-cursor="Explore">
-            <span class="mono faint">01</span>
-            <span class="collection-row__title">Everyday Minimal</span>
-            <span class="collection-row__desc">Quiet forms made for wearing every single day.</span>
-            <span class="collection-row__arrow" aria-hidden="true">↗</span>
-          </a>
-          <a class="collection-row magnetic" href="collections.html" data-preview="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=900&q=85" data-cursor="Explore">
-            <span class="mono faint">02</span>
-            <span class="collection-row__title">Statement Pieces</span>
-            <span class="collection-row__desc">Small sculptures that ask for a second look.</span>
-            <span class="collection-row__arrow" aria-hidden="true">↗</span>
-          </a>
-          <a class="collection-row magnetic" href="collections.html" data-preview="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=900&q=85" data-cursor="Explore">
-            <span class="mono faint">03</span>
-            <span class="collection-row__title">Custom Creations</span>
-            <span class="collection-row__desc">Made with you, for you, from the first sketch.</span>
-            <span class="collection-row__arrow" aria-hidden="true">↗</span>
-          </a>
-          <a class="collection-row magnetic" href="collections.html" data-preview="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=900&q=85" data-cursor="Explore">
-            <span class="mono faint">04</span>
-            <span class="collection-row__title">The Archive</span>
-            <span class="collection-row__desc">Past experiments, kept close to the heart.</span>
-            <span class="collection-row__arrow" aria-hidden="true">↗</span>
-          </a>
-        </div>
-      </div>
-      <div class="float-preview" aria-hidden="true"><img src="" alt=""></div>
-    </section>
-
-    <!-- Namita's philosophy, with an endless quiet marquee -->
-    <section class="section philosophy" aria-labelledby="philosophy-title">
-      <div class="marquee" aria-hidden="true">
-        <div class="marquee__group"><span>Slow hands</span><i></i><span>Small batches</span><i></i><span>Made by Namita</span><i></i></div>
-        <div class="marquee__group"><span>Slow hands</span><i></i><span>Small batches</span><i></i><span>Made by Namita</span><i></i></div>
-      </div>
-      <div class="wrap philosophy__body">
-        <div class="philosophy__quote" id="philosophy-title" data-reveal="text">
-          <p class="t-lede">“I don't make jewellery to keep up. I make it the way I'd want to hold it — warm, a little imperfect, and entirely mine.”</p>
-          <p class="mono faint" style="margin-top:1.6rem">— Namita</p>
-        </div>
-        <div class="philosophy__image" data-reveal>
-          <div class="frame ratio-portrait" data-parallax>
-            <img src="https://images.unsplash.com/photo-1452860606245-08befc0ff44b?auto=format&fit=crop&w=1200&q=85" alt="Hands working carefully at a jewellery bench" loading="lazy">
+  <main id="main-content">
+    <!-- HERO -->
+    <section class="relative min-h-screen flex items-center overflow-hidden pt-28 pb-16 md:pb-20">
+      <div id="hero-canvas" class="hero-canvas-wrap"></div>
+      <div class="hero-overlay"></div>
+      <div class="relative z-10 max-w-[1400px] mx-auto px-6 md:px-10 w-full grid md:grid-cols-12 gap-10 md:gap-8 items-center">
+        <div class="md:col-span-6 lg:col-span-6">
+          <div class="flex items-center gap-4 mb-7 reveal">
+            <span class="inline-block w-10 h-px bg-accent/70"></span>
+            <p class="eyebrow !mb-0">A homemade jewelry project by Namita</p>
+          </div>
+          <h1 class="serif text-[clamp(3rem,7.5vw,7rem)] leading-[0.92] tracking-[-0.02em] text-ink reveal reveal-delay-1">
+            Little pieces,<br><span class="italic text-accent">made by hand.</span>
+          </h1>
+          <p class="mt-8 max-w-xl text-muted leading-relaxed text-base md:text-lg reveal reveal-delay-2">
+            Sunshine is a slow, small-batch jewelry practice rooted in care, natural textures, and the quiet beauty of things made one at a time.
+          </p>
+          <div class="mt-10 flex flex-wrap gap-4 reveal reveal-delay-3">
+            <a href="collections.html" class="btn btn-solid" data-magnetic>Explore Collections <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+            <a href="story.html" class="btn" data-magnetic>Meet Namita</a>
+          </div>
+          <div class="mt-14 flex items-center gap-6 reveal reveal-delay-3">
+            <div class="flex -space-x-3">
+              <div class="w-11 h-11 rounded-full overflow-hidden border-2 border-sand img-frame"><img src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=120&q=80" alt="Handmade jewelry detail" class="w-full h-full object-cover" loading="lazy"></div>
+              <div class="w-11 h-11 rounded-full overflow-hidden border-2 border-sand img-frame"><img src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=120&q=80" alt="Jewelry crafting materials" class="w-full h-full object-cover" loading="lazy"></div>
+            </div>
+            <p class="text-xs tracking-wide uppercase text-muted">Handcrafted slowly · By Namita</p>
           </div>
         </div>
-        <div class="philosophy__note" data-reveal>
-          <p class="mono faint">The homemade way</p>
-          <p class="t-body" style="margin-top:1rem">Everything starts at a table at home: a sketch, a length of wire, a afternoon that refuses to be hurried.</p>
-          <a class="link-underline" href="about.html" style="margin-top:1.6rem" data-cursor="Read">Read the story
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M5 19 19 5M9 5h10v10"/></svg>
-          </a>
+        <div class="md:col-span-6 lg:col-span-5 lg:col-start-8 reveal reveal-delay-2">
+          <div class="relative">
+            <div class="img-frame aspect-[4/5] max-h-[75vh] shadow-[0_30px_80px_-24px_rgba(46,41,37,.22)]">
+              <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=1200&q=80" alt="Handcrafted Sunshine jewelry arranged in warm natural light" loading="eager" fetchpriority="high" width="1200" height="1500">
+            </div>
+            <div class="absolute -left-4 md:-left-8 bottom-8 md:bottom-12 bg-sand/90 backdrop-blur-sm border border-[var(--line)] px-5 py-4 shadow-sm">
+              <p class="eyebrow !mb-1">Small batch</p>
+              <p class="serif text-2xl text-ink">Made with care</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="absolute left-6 md:left-10 bottom-8 z-10 hidden md:block">
+        <div class="scroll-hint">Scroll</div>
+      </div>
+    </section>
+
+    <!-- EDITORIAL INTRO -->
+    <section class="py-20 md:py-28 px-6 md:px-10 border-y border-[var(--line)] bg-stonewarm/20">
+      <div class="max-w-[1400px] mx-auto grid lg:grid-cols-12 gap-12 items-start">
+        <div class="lg:col-span-5 reveal">
+          <p class="eyebrow mb-5">The spirit of Sunshine</p>
+          <h2 class="serif text-4xl md:text-6xl leading-[1.05] tracking-tight">Jewelry that feels <span class="italic">personal</span>, not produced.</h2>
+        </div>
+        <div class="lg:col-span-6 lg:col-start-7 reveal reveal-delay-1">
+          <p class="text-muted leading-relaxed text-lg mb-6">Every Sunshine piece begins at Namita's home workspace — shaped slowly, finished thoughtfully, and made to be worn in real life. There is no factory, no rush, and no two pieces exactly alike.</p>
+          <p class="text-muted leading-relaxed mb-8">The result is jewelry with warmth: small objects that carry the mark of human hands and the calm of intentional making.</p>
+          <a href="story.html" class="arrow-link relative">Read Namita's story <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
         </div>
       </div>
     </section>
 
-    <!-- Signature pieces: pinned horizontal wander on desktop, natural wrap on mobile -->
-    <section class="section signatures" id="signatures" aria-labelledby="signatures-title">
-      <div class="wrap signatures__head" data-reveal>
-        <h2 class="display t-section" id="signatures-title">Signature <em>pieces</em></h2>
-        <p class="mono muted">06 works — wander sideways</p>
-      </div>
-      <div class="horizontal-panel">
-        <div class="horizontal-track">
-          <article class="piece-card" data-reveal>
-            <div class="frame piece-card__frame" data-parallax><img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=1200&q=85" alt="A quietly sculptural ring" loading="lazy"></div>
-            <div class="piece-card__meta"><h3 class="piece-card__title">Solstice Ring</h3><span class="mono faint">01 / 06</span></div>
-          </article>
-          <article class="piece-card" data-reveal>
-            <div class="frame piece-card__frame" data-parallax><img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=1200&q=85" alt="Small hand-shaped studs" loading="lazy"></div>
-            <div class="piece-card__meta"><h3 class="piece-card__title">Morning Studs</h3><span class="mono faint">02 / 06</span></div>
-          </article>
-          <article class="piece-card" data-reveal>
-            <div class="frame piece-card__frame" data-parallax><img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1200&q=85" alt="A delicate necklace resting on fabric" loading="lazy"></div>
-            <div class="piece-card__meta"><h3 class="piece-card__title">Soft Light Chain</h3><span class="mono faint">03 / 06</span></div>
-          </article>
-          <article class="piece-card" data-reveal>
-            <div class="frame piece-card__frame" data-parallax><img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1200&q=85" alt="A warm metallic statement ring" loading="lazy"></div>
-            <div class="piece-card__meta"><h3 class="piece-card__title">Halo Form</h3><span class="mono faint">04 / 06</span></div>
-          </article>
-          <article class="piece-card" data-reveal>
-            <div class="frame piece-card__frame" data-parallax><img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1200&q=85" alt="Layered delicate necklaces" loading="lazy"></div>
-            <div class="piece-card__meta"><h3 class="piece-card__title">Petite Layers</h3><span class="mono faint">05 / 06</span></div>
-          </article>
-          <article class="piece-card" data-reveal>
-            <div class="frame piece-card__frame" data-parallax><img src="https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=1200&q=85" alt="Hand-finished stacked rings" loading="lazy"></div>
-            <div class="piece-card__meta"><h3 class="piece-card__title">Everyday Stack</h3><span class="mono faint">06 / 06</span></div>
-          </article>
+    <!-- FEATURED COLLECTION -->
+    <section class="py-24 md:py-32 px-6 md:px-10">
+      <div class="max-w-[1400px] mx-auto">
+        <div class="grid lg:grid-cols-12 gap-10 mb-14 md:mb-20 items-end">
+          <div class="lg:col-span-6 reveal">
+            <p class="eyebrow mb-5">Featured collection</p>
+            <h2 class="serif text-4xl md:text-6xl leading-[1.05] tracking-tight">Pieces with a <span class="italic">quiet glow</span>.</h2>
+          </div>
+          <div class="lg:col-span-5 lg:col-start-8 reveal reveal-delay-1 flex lg:justify-end">
+            <a href="collections.html" class="arrow-link">View all collections <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+          </div>
         </div>
-        <p class="horizontal-hint mono faint" aria-hidden="true">Scroll to wander <span>→</span></p>
+
+        <div class="grid lg:grid-cols-12 gap-8 md:gap-10">
+          <article class="lg:col-span-7 reveal">
+            <a href="product.html?id=sunlit-necklace" class="block group no-underline text-inherit">
+              <div class="img-frame aspect-[4/4.8] md:aspect-[5/4] mb-6">
+                <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1400&q=80" alt="Sunlit Necklace, elegant handcrafted necklace" loading="lazy" width="1400" height="1120">
+              </div>
+              <div class="flex flex-wrap items-end justify-between gap-4">
+                <div>
+                  <p class="eyebrow mb-2">Statement Pieces</p>
+                  <h3 class="serif text-3xl md:text-5xl">Sunlit Necklace</h3>
+                </div>
+                <span class="arrow-link">View piece <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17 17 7M7 7h10v10"/></svg></span>
+              </div>
+            </a>
+          </article>
+
+          <div class="lg:col-span-5 grid gap-8 md:gap-10">
+            <article class="reveal reveal-delay-1">
+              <a href="product.html?id=dawn-ring" class="block group no-underline text-inherit">
+                <div class="img-frame aspect-[4/3.4] mb-5">
+                  <img src="https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?auto=format&fit=crop&w=1000&q=80" alt="Minimal handcrafted gold ring" loading="lazy" width="1000" height="850">
+                </div>
+                <p class="eyebrow mb-2">Everyday Minimal</p>
+                <h3 class="serif text-2xl md:text-4xl">The Dawn Ring</h3>
+              </a>
+            </article>
+            <article class="reveal reveal-delay-2">
+              <a href="product.html?id=petal-drop-earrings" class="block group no-underline text-inherit">
+                <div class="img-frame aspect-[4/3.4] mb-5">
+                  <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1000&q=80" alt="Handmade pendant earrings with natural aesthetic" loading="lazy" width="1000" height="850">
+                </div>
+                <p class="eyebrow mb-2">Nature Inspired</p>
+                <h3 class="serif text-2xl md:text-4xl">Petal Drop Earrings</h3>
+              </a>
+            </article>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Closing invitation to the live Instagram diary -->
-    <section class="section rule-top">
-      <div class="wrap closing">
-        <div class="closing__copy" data-reveal="text">
-          <p class="mono faint">The diary</p>
-          <h2 class="display t-section" style="margin-block:1.4rem 2rem">Seen in the <em>making.</em></h2>
-          <p class="t-body">New work, half-finished ideas and little moments from the table live on Instagram. It is the closest thing to a shop window we have.</p>
-          <a class="btn magnetic" href="https://www.instagram.com/sunshine_handicraft_n/" target="_blank" rel="noopener noreferrer" style="margin-top:2.2rem" data-cursor="Visit">
-            @sunshine_handicraft_n
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M5 19 19 5M9 5h10v10"/></svg>
-          </a>
+    <!-- PROCESS GLIMPSE -->
+    <section class="py-24 md:py-32 px-6 md:px-10 bg-stonewarm/35">
+      <div class="max-w-[1400px] mx-auto grid md:grid-cols-12 gap-12 md:gap-10 items-center">
+        <div class="md:col-span-5 reveal order-2 md:order-1">
+          <div class="img-frame aspect-[4/5]">
+            <img src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=1200&q=80" alt="Close-up of delicate handmade gold jewelry on soft fabric" loading="lazy" width="1200" height="1500">
+          </div>
         </div>
-        <div class="closing__image" data-reveal>
-          <div class="frame ratio-portrait" data-parallax>
-            <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1200&q=85" alt="A quiet studio table with tools and materials" loading="lazy">
+        <div class="md:col-span-6 md:col-start-7 reveal reveal-delay-1 order-1 md:order-2">
+          <p class="eyebrow mb-5">The handmade process</p>
+          <h2 class="serif text-4xl md:text-6xl leading-[1.05] tracking-tight mb-8">Slow made,<br><span class="italic">from the heart.</span></h2>
+          <p class="text-muted leading-relaxed mb-8 max-w-xl">From raw material to final polish, Namita shapes each piece by hand — honoring imperfections, patience, and the small details that make handmade jewelry feel alive.</p>
+          <div class="space-y-5 mb-10">
+            <div class="flex gap-4 items-start"><span class="serif text-2xl text-accent">01</span><p class="text-muted leading-relaxed pt-1">Materials chosen for warmth, texture, and natural beauty.</p></div>
+            <div class="flex gap-4 items-start"><span class="serif text-2xl text-accent">02</span><p class="text-muted leading-relaxed pt-1">Shapes formed by hand in small, thoughtful batches.</p></div>
+            <div class="flex gap-4 items-start"><span class="serif text-2xl text-accent">03</span><p class="text-muted leading-relaxed pt-1">Finished slowly so each piece carries a personal touch.</p></div>
+          </div>
+          <a href="story.html" class="btn" data-magnetic>Discover the craft</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUOTE / INSTAGRAM -->
+    <section class="py-24 md:py-32 px-6 md:px-10 border-t border-[var(--line)]">
+      <div class="max-w-[1400px] mx-auto grid md:grid-cols-12 gap-12 md:gap-16 items-center">
+        <div class="md:col-span-6 reveal">
+          <p class="eyebrow mb-8">From Namita's hands</p>
+          <blockquote class="serif text-3xl md:text-5xl lg:text-6xl leading-[1.15] tracking-tight text-ink max-w-3xl">
+            “I wanted to make jewelry that feels like sunshine — <span class="italic text-accent">warm, gentle, and close to the skin.</span>”
+          </blockquote>
+          <div class="mt-10 flex flex-col items-start gap-5">
+            <p class="text-muted max-w-md">Follow the journey behind each piece, from Namita’s home workspace to the final handmade detail.</p>
+            <a href="https://www.instagram.com/sunshine_handicraft_n/" target="_blank" rel="noopener noreferrer" class="btn" data-magnetic>
+              @sunshine_handicraft_n
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17 17 7M7 7h10v10"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="md:col-span-5 md:col-start-8 reveal reveal-delay-1">
+          <div class="relative">
+            <div class="img-frame aspect-[4/5]">
+              <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=1200&q=80" alt="Handcrafted jewelry pieces arranged in warm natural light" loading="lazy" width="1200" height="1500">
+            </div>
+            <div class="absolute -bottom-5 -left-5 bg-sand border border-[var(--line)] px-5 py-4 hidden sm:block">
+              <p class="eyebrow !mb-1">Instagram</p>
+              <p class="serif text-xl">Behind the making</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="wrap">
-      <div class="footer-top">
-        <div>
-          <p class="footer-word">sun<em>shine</em>.</p>
-          <p class="mono faint">Handmade, slowly, by Namita.</p>
-        </div>
-        <div class="footer-col">
-          <h3 class="mono muted" style="margin-bottom:1.3rem">Explore</h3>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="collections.html">Collections</a></li>
-            <li><a href="about.html">The story</a></li>
-            <li><a href="lookbook.html">Lookbook</a></li>
-            <li><a href="contact.html">Connect</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h3 class="mono muted" style="margin-bottom:1.3rem">Elsewhere</h3>
-          <ul>
-            <li><a href="https://www.instagram.com/sunshine_handicraft_n/" target="_blank" rel="noopener noreferrer">Instagram ↗</a></li>
-            <li><a href="contact.html">Custom orders</a></li>
-            <li><a href="contact.html#faq">Making times</a></li>
-          </ul>
+  <footer class="px-6 md:px-10 py-16 md:py-20 border-t border-[var(--line)] bg-stonewarm/30">
+    <div class="max-w-[1400px] mx-auto grid md:grid-cols-12 gap-12">
+      <div class="md:col-span-4">
+        <a href="index.html" class="font-serif text-3xl tracking-wide text-ink no-underline">sun<span class="italic text-accent">shine</span></a>
+        <p class="mt-5 text-muted leading-relaxed max-w-sm">Handmade jewelry by Namita. Small-batch, slow-made, and crafted with warmth.</p>
+      </div>
+      <div class="md:col-span-2 md:col-start-7">
+        <p class="eyebrow mb-4">Pages</p>
+        <div class="flex flex-col gap-3 text-sm text-muted">
+          <a href="index.html" class="hover:text-ink transition-colors">Home</a>
+          <a href="collections.html" class="hover:text-ink transition-colors">Collections</a>
+          <a href="story.html" class="hover:text-ink transition-colors">Our Story</a>
+          <a href="contact.html" class="hover:text-ink transition-colors">Contact</a>
         </div>
       </div>
-      <div class="footer-bottom">
-        <span class="mono faint">© <span data-year></span> Sunshine · Made by hand</span>
-        <span class="mono faint">No mass production, ever.</span>
+      <div class="md:col-span-3 md:col-start-10">
+        <p class="eyebrow mb-4">Connect</p>
+        <div class="flex flex-col gap-3 text-sm text-muted">
+          <a href="https://www.instagram.com/sunshine_handicraft_n/" target="_blank" rel="noopener noreferrer" class="hover:text-ink transition-colors">Instagram ↗</a>
+          <a href="contact.html" class="hover:text-ink transition-colors">Custom inquiries</a>
+        </div>
       </div>
+    </div>
+    <div class="max-w-[1400px] mx-auto mt-14 pt-6 border-t border-[var(--line)] flex flex-col sm:flex-row gap-4 justify-between text-xs tracking-wide text-muted uppercase">
+      <span>© <span data-year></span> Sunshine Handmade</span>
+      <span>Made slowly by Namita</span>
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.11/dist/lenis.min.js"></script>
-  <script type="module" src="js/main.js"></script>
+  <script type="module">
+    import { initHeroCanvas } from './assets/js/three-hero.js';
+    initHeroCanvas();
+  </script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
