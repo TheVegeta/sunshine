@@ -1,0 +1,42 @@
+ACT AS AN AWWWARDS-WINNING CREATIVE DEVELOPER, UI/UX DESIGNER, AND WEBGL SPECIALIST.
+
+PROJECT OVERVIEW:
+Create a complete, multi-page, production-ready website for "Sunshine" (also referred to as Sunshine Handicraft), an independent, artisanal handmade jewelry brand founded and crafted by a solo female creator named Namita. What started as a passionate, small homemade project has blossomed into a curated studio offering diverse handcrafted designs and bespoke collections.
+
+CORE AESTHETIC & DESIGN PHILOSOPHY:
+- Vibe & Atmosphere: Organic, tactile, poetic, warm, and deeply personal. Avoid corporate, sterile e-commerce templates. The site should feel like stepping into an artist's sunlit studio where every piece carries human touch, imperfection, and soul.
+- STRICT CONSTRAINT ON COLORS: Do NOT use any hardcoded color palettes, hex codes, or specific color instructions in the design direction—allow the visual hierarchy, lighting, textures, and typography to define the mood organically, or use subtle, natural adaptive tones derived from materiality (raw metals, clay, pearls, natural light).
+- Typography: Editorial, high-fashion serif pairings for headings (evoking luxury lookbooks and handwritten poetry) contrasted with clean, refined humanist sans-serif for body copy and micro-interactions.
+
+TECHNICAL ARCHITECTURE (MULTI-PAGE HTML):
+- Structure: Generate a true multi-page HTML architecture (NOT a Single Page Application). Provide complete, interconnected HTML files along with shared CSS and modular JavaScript files:
+  1. `index.html` (The Atelier / Home: Immersive hero, brand essence, featured collections preview, interactive 3D showcase)
+  2. `collections.html` (The Archive / Catalog: Filterable gallery of various handcrafted designs, collections, and lookbook grids)
+  3. `story.html` (Namita's Journal / About: The intimate origin story of the homemade project, craftsmanship process, behind-the-scenes studio timeline)
+  4. `contact.html` (Custom Orders & Connect: Bespoke jewelry inquiry form, care guide, and direct social integration)
+
+THREE.JS & WEBGL INTEGRATION:
+- Implement Three.js seamlessly into the DOM to elevate the tactile experience without overwhelming performance:
+  - Interactive 3D Hero Centerpiece (`index.html`): Procedural or custom-shaded 3D organic jewelry forms (e.g., interlocking artisanal rings, delicate kinetic pendants, or sculpted metallic charms) that react subtly to mouse movement, scroll velocity, and ambient lighting with realistic physical materials (metalness, roughness, refraction).
+  - Subtle Ambient Particles / Light Caustics: Gentle floating dust motes or natural light reflections across the viewport that mimic sunlight filtering through a studio window.
+  - Interactive 3D Collection Previews or Hover Distortion (`collections.html`): WebGL image plane distortions (liquid/silk ripple shaders on hover) or interactive 3D inspection viewports for signature pieces.
+
+AWWWARDS-LEVEL MOTION & MICRO-INTERACTIONS:
+- Smooth Scrolling: Integrate Lenis (or custom smooth scroll interpolation) for fluid, weighted page navigation.
+- Choreography (GSAP + ScrollTrigger):
+  - Custom preloader featuring an organic, hand-drawn SVG signature or kinetic counter transitioning smoothly into the hero reveal.
+  - Staggered split-text reveals for editorial headlines.
+  - Parallax image framing and asymmetric editorial grid layouts that shift organically on scroll.
+  - Custom magnetic cursor that morphs contextually (e.g., expanding to "Explore", "View Piece", or "Drag" over interactive elements).
+  - Seamless page transition overlays (curtain or organic dissolve effects) when navigating between `index.html`, `collections.html`, `story.html`, and `contact.html`.
+
+CONTENT & BRAND INTEGRATION:
+- Brand Name: Sunshine (Sunshine Jewelry / Sunshine Handicraft)
+- Founder & Artisan: Namita (highlight her personal touch, hand-assembling techniques, and small-batch philosophy throughout the copy).
+- Collections: Showcase diverse handcrafted categories (e.g., Everyday Minimalist, Statement Artisanal, Nature-Inspired, Custom Keepsakes) with rich storytelling descriptions rather than generic SKU labels.
+- Social & Community Integration: Prominently and tastefully integrate the official Instagram handle (`https://www.instagram.com/sunshine_handicraft_n/`). Include a curated "From the Studio (@sunshine_handicraft_n)" visual feed section and direct DM/Instagram inquiry triggers for ordering pieces, reflecting the authentic small-business workflow.
+
+DELIVERABLES & CODE QUALITY:
+- Provide clean, well-commented, semantic HTML5, modern CSS3 (using CSS Grid, Flexbox, clamp() for fluid typography, and custom properties), and modular vanilla JavaScript (ES6+).
+- Load Three.js, GSAP, ScrollTrigger, and Lenis via reliable CDNs so the code runs immediately upon opening in a browser.
+- Ensure full responsiveness across desktop, tablet, and mobile devices, including touch-friendly fallbacks for Three.js and custom cursor interactions.
