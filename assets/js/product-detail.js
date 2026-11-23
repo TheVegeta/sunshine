@@ -48,6 +48,31 @@
     const meta = document.querySelector('meta[name="description"]');
     if (meta) meta.setAttribute('content', product.desc);
 
+    const pageUrl = `https://thevegeta.github.io/sunshine/product.html?id=${product.id}`;
+    const setMeta = (selector, attr, value) => { const el = document.querySelector(selector); if (el) el.setAttribute(attr, value); };
+    setMeta('link[rel="canonical"]', 'href', pageUrl);
+    setMeta('meta[property="og:title"]', 'content', `${product.title} — Sunshine Handmade Jewelry`);
+    setMeta('meta[property="og:description"]', 'content', product.desc);
+    setMeta('meta[property="og:url"]', 'content', pageUrl);
+    setMeta('meta[property="og:image"]', 'content', product.image);
+    setMeta('meta[property="og:image:alt"]', 'content', product.alt);
+    setMeta('meta[name="twitter:title"]', 'content', `${product.title} — Sunshine Handmade Jewelry`);
+    setMeta('meta[name="twitter:description"]', 'content', product.desc);
+    setMeta('meta[name="twitter:image"]', 'content', product.image);
+
+    let ld = document.getElementById('product-jsonld');
+    if (!ld) { ld = document.createElement('script'); ld.type = 'application/ld+json'; ld.id = 'product-jsonld'; document.head.appendChild(ld); }
+    ld.textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Product',
+      name: product.title,
+      description: product.desc,
+      image: [product.image],
+      category: product.label,
+      brand: { '@type': 'Brand', name: 'Sunshine Handmade Jewelry' },
+      url: pageUrl
+    });
+
     const related = products.filter(p => p.id !== product.id).slice(0, 3);
     wrap.innerHTML = `
       <section class="px-6 md:px-10 pt-32 md:pt-40 pb-16 md:pb-24">

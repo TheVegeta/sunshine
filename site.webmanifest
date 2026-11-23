@@ -1,0 +1,12 @@
+{
+  "name": "Sunshine Handmade Jewelry",
+  "short_name": "Sunshine",
+  "description": "Handmade jewelry by Namita. Small-batch, slow-made, and crafted with warmth.",
+  "start_url": "/sunshine/",
+  "display": "standalone",
+  "background_color": "#f6f2ec",
+  "theme_color": "#f6f2ec",
+  "icons": [
+    { "src": "assets/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
