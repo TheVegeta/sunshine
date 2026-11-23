@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Collections — Sunshine</title>
+  <meta name="description" content="Browse Sunshine's small-batch handmade jewellery: everyday minimal pieces, statement forms and custom creations by Namita.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="importmap">
+    { "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.186.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.186.0/examples/jsm/"
+      } }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page-curtain is-active" aria-hidden="true">
+    <div class="page-curtain__inner"></div>
+    <span class="page-curtain__mark">sunshine.</span>
+  </div>
+  <div class="cursor" aria-hidden="true">
+    <div class="cursor__ring"><span class="cursor__label"></span></div>
+    <div class="cursor__dot"></div>
+  </div>
+  <div class="webgl-ambient" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand magnetic" href="index.html" data-cursor="Home" aria-label="Sunshine, home">
+      <span class="brand__mark">s<span class="brand__dot">.</span></span>
+      <span class="brand__name">Sunshine<em>handmade by Namita</em></span>
+    </a>
+    <nav class="site-nav" id="site-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="collections.html" aria-current="page">Collections</a>
+      <a href="about.html">The story</a>
+      <a href="lookbook.html">Lookbook</a>
+      <a href="contact.html">Connect</a>
+    </nav>
+    <div class="header-tail">
+      <span class="header-note">Slow-made · Small batch</span>
+      <a class="social-link magnetic" href="https://www.instagram.com/sunshine_handicraft_n/" target="_blank" rel="noopener noreferrer" data-cursor="Follow">
+        Instagram <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 19 19 5M9 5h10v10"/></svg>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-head wrap" aria-labelledby="archive-title">
+      <div class="page-head__grid">
+        <div class="page-head__title">
+          <p class="mono faint">02 — The archive</p>
+          <h1 class="display t-hero" id="archive-title">
+            <span class="line-mask"><span>Objects with</span></span>
+            <span class="line-mask"><span><em>a memory.</em></span></span>
+          </h1>
+        </div>
+        <div class="page-head__note">
+          <p class="t-body">Every piece here was made at home, in small numbers, from materials chosen by hand. Nothing is restocked on a schedule — when a batch is gone, it is gone.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap" aria-label="Filterable collection">
+      <div class="filter-bar" role="group" aria-label="Filter pieces">
+        <span class="mono faint filter-bar__label">Filter the edit</span>
+        <button class="filter-btn is-active" type="button" data-filter="all" aria-pressed="true">All <sup>12</sup></button>
+        <button class="filter-btn" type="button" data-filter="everyday" aria-pressed="false">Everyday <sup>05</sup></button>
+        <button class="filter-btn" type="button" data-filter="statement" aria-pressed="false">Statement <sup>04</sup></button>
+        <button class="filter-btn" type="button" data-filter="custom" aria-pressed="false">Custom <sup>03</sup></button>
+      </div>
+
+      <div class="gallery" id="gallery">
+        <article class="gallery-item" data-category="everyday">
+          <div class="frame gallery-item__frame" data-parallax><img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=1100&q=85" alt="Solstice ring, hand-formed" loading="lazy"></div>
+          <div class="gallery-item__caption"><h2 class="gallery-item__name">Solstice Ring</h2><button class="gallery-item__view" type="button" data-quick-view data-material="Hand-formed metal, satin finish" data-time="2–3 weeks" data-note="A quiet band with an uneven edge — the mark of the hand that made it." data-cursor="View">View piece</button></div>
+        </article>
+        <article class="gallery-item" data-category="everyday">
+          <div class="frame gallery-item__frame" data-parallax><img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=1100&q=85" alt="Morning studs, small sculptural pair" loading="lazy"></div>
+          <div class="gallery-item__caption"><h2 class="gallery-item__name">Morning Studs</h2><button class="gallery-item__view" type="button" data-quick-view data-material="Lightweight hand-shaped studs" data-time="1–2 weeks" data-note="Small enough to forget you're wearing them. Lovely enough that you won't." data-cursor="View">View piece</button></div>
+        </article>
+        <article class="gallery-item" data-category="statement">
+          <div class="frame gallery-item__frame" data-parallax><img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1100&q=85" alt="Halo form statement ring" loading="lazy"></div>
+          <div class="gallery-item__caption"><h2 class="gallery-item__name">Halo Form</h2><button class="gallery-item__view" type="button" data-quick-view data-material="Sculptural ring, polished by hand" data-time="3–4 weeks" data-note="A little wearable sculpture. Each one varies slightly in its curve." data-cursor="View">View piece</button></div>
+        </article>
+        <article class="gallery-item" data-category="everyday">
+          <div class="frame gallery-item__frame" data-parallax><img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1100&q=85" alt="Soft light chain necklace" loading="lazy"></div>
+          <div class="gallery-item__caption"><h2 class="gallery-item__name">Soft Light Chain</h2><button class="gallery-item__view" type="button" data-quick-view data-material="Fine hand-assembled chain" data-time="2 weeks" data-note="A single delicate strand, made to sit close and catch the light." data-cursor="View">View piece</button></div>
+        </article>
+        <article class="gallery-item" data-category="custom">
+          <div class="frame gallery-item__frame" data-parallax><img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1100&q=85" alt="Petite layered necklaces" loading="lazy"></div>
+          <div class="gallery-item__caption"><h2 class="gallery-item__name">Petite Layers</h2><button class="gallery-item__view" type="button" data-quick-view data-material="Built with you, piece by piece" data-time="4–6 weeks" data-note="Tell Namita the story and she'll sketch a set that layers with your life." data-cursor="View">View piece</button></div>
+        </article>
+        <article class="gallery-item" data-category="everyday">
+          <div class="frame gallery-item__frame" data-parallax><img src="https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=1100&q=85" alt="Everyday stack of rings" loading="lazy"></div>
+          <div class="gallery-item__caption"><h2 class="gallery-item__name">Everyday Stack</h2><button class="gallery-item__view" type="button" data-quick-view data-material="Mixed hand-finished bands" data-time="2–3 weeks" data-note="A set designed to be worn together, together or completely apart." data-cursor="View">View piece</button></div>
+        </article>
+        <article class="gallery-item" data-category="statement">
+          <div class="frame gallery-item__frame" data-parallax><img src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=1100&q=85" alt="Wide hand-finished bangle" loading="lazy"></div>
+          <div class="gallery-item__caption"><h2 class="gallery-item__name">Wide Horizon</h2><button class="gallery-item__view" type="button" data-quick-view data-material="Broad bangle, hammered edge" data-time="3 weeks" data-note="A bold curve with a soft inside — made to be lived in, not just looked at." data-cursor="View">View piece</button></div>
+        </article>
+        <article class="gallery-item" data-category="custom">
+          <div class="frame gallery-item__frame" data-parallax><img src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=1100&q=85" alt="Custom made earrings" loading="lazy"></div>
+          <div class="gallery-item__caption"><h2 class="gallery-item__name">Your Shape</h2><button class="gallery-item__view" type="button" data-quick-view data-material="Designed around your idea" data-time="4–6 weeks" data-note="Send a sketch, a photograph or just a feeling. Namita will take it from there." data-cursor="View">View piece</button></div>
+        </article>
+        <article class="gallery-item" data-category="statement">
+          <div class="frame gallery-item__frame" data-parallax><img src="https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?auto=format&fit=crop&w=1100&q=85" alt="An ornamental handmade piece" loading="lazy"></div>
+          <div class="gallery-item__caption"><h2 class="gallery-item__name">Small Wonder</h2><button class="gallery-item__view" type="button" data-quick-view data-material="Mixed hand-formed elements" data-time="3–4 weeks" data-note="An experiment that stayed. Only a handful were ever made." data-cursor="View">View piece</button></div>
+        </article>
+        <article class="gallery-item" data-category="everyday">
+          <div class="frame gallery-item__frame" data-parallax><img src="https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=1100&q=85" alt="Simple everyday earrings" loading="lazy"></div>
+          <div class="gallery-item__caption"><h2 class="gallery-item__name">Quiet Pair</h2><button class="gallery-item__view" type="button" data-quick-view data-material="Featherlight hand-formed drops" data-time="1–2 weeks" data-note="The kind of pair you put on and never think to take off." data-cursor="View">View piece</button></div>
+        </article>
+        <article class="gallery-item" data-category="statement">
+          <div class="frame gallery-item__frame" data-parallax><img src="https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?auto=format&fit=crop&w=1100&q=85" alt="Sculptural drop earrings" loading="lazy"></div>
+          <div class="gallery-item__caption"><h2 class="gallery-item__name">Long Light</h2><button class="gallery-item__view" type="button" data-quick-view data-material="Hand-drawn wire, polished" data-time="3 weeks" data-note="A slow line that moves with you. Slightly different every time." data-cursor="View">View piece</button></div>
+        </article>
+        <article class="gallery-item" data-category="custom">
+          <div class="frame gallery-item__frame" data-parallax><img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=1100&q=85" alt="A personalised handmade keepsake" loading="lazy"></div>
+          <div class="gallery-item__caption"><h2 class="gallery-item__name">Keepsake</h2><button class="gallery-item__view" type="button" data-quick-view data-material="Made around a story you share" data-time="4–6 weeks" data-note="A private commission. Every detail decided together, slowly." data-cursor="View">View piece</button></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section rule-top">
+      <div class="wrap closing">
+        <div class="closing__copy" data-reveal="text">
+          <p class="mono faint">No checkout, no cart</p>
+          <h2 class="display t-section" style="margin-block:1.4rem 2rem">Ask about a <em>piece.</em></h2>
+          <p class="t-body">Every enquiry goes straight to Namita on Instagram. Tell her what caught your eye, or what you've been imagining.</p>
+          <a class="btn magnetic" href="https://www.instagram.com/sunshine_handicraft_n/" target="_blank" rel="noopener noreferrer" style="margin-top:2.2rem" data-cursor="Message">
+            Inquire via Instagram
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M5 19 19 5M9 5h10v10"/></svg>
+          </a>
+        </div>
+        <div class="closing__image" data-reveal>
+          <div class="frame ratio-portrait" data-parallax>
+            <img src="https://images.unsplash.com/photo-1513456852971-30c0b8199d4d?auto=format&fit=crop&w=1200&q=85" alt="Close view of hands shaping a small object" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Quick-view drawer -->
+  <div class="drawer-backdrop" aria-hidden="true"></div>
+  <aside class="quick-view drawer" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Piece details" inert>
+    <div class="drawer__top">
+      <span class="mono faint">Piece details</span>
+      <button class="drawer__close" type="button" aria-label="Close details" data-cursor="Close">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 5l14 14M19 5 5 19"/></svg>
+      </button>
+    </div>
+    <div class="frame drawer__frame"><img src="" alt="" loading="lazy"></div>
+    <div>
+      <p class="mono faint">Sunshine · handmade</p>
+      <h2 style="margin-top:.6rem">Piece</h2>
+    </div>
+    <dl class="drawer__spec">
+      <dt class="mono faint">Material</dt><dd data-detail="material">—</dd>
+      <dt class="mono faint">Making time</dt><dd data-detail="time">—</dd>
+    </dl>
+    <p class="t-body" data-detail="note">—</p>
+    <a class="btn magnetic" data-detail="link" href="https://www.instagram.com/sunshine_handicraft_n/" target="_blank" rel="noopener noreferrer" data-cursor="Ask">
+      Inquire via Instagram
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M5 19 19 5M9 5h10v10"/></svg>
+    </a>
+  </aside>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <div>
+          <p class="footer-word">sun<em>shine</em>.</p>
+          <p class="mono faint">Handmade, slowly, by Namita.</p>
+        </div>
+        <div class="footer-col">
+          <h3 class="mono muted" style="margin-bottom:1.3rem">Explore</h3>
+          <ul><li><a href="index.html">Home</a></li><li><a href="collections.html">Collections</a></li><li><a href="about.html">The story</a></li><li><a href="lookbook.html">Lookbook</a></li><li><a href="contact.html">Connect</a></li></ul>
+        </div>
+        <div class="footer-col">
+          <h3 class="mono muted" style="margin-bottom:1.3rem">Elsewhere</h3>
+          <ul><li><a href="https://www.instagram.com/sunshine_handicraft_n/" target="_blank" rel="noopener noreferrer">Instagram ↗</a></li><li><a href="contact.html">Custom orders</a></li><li><a href="contact.html#faq">Making times</a></li></ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="mono faint">© <span data-year></span> Sunshine · Made by hand</span>
+        <span class="mono faint">No mass production, ever.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.11/dist/lenis.min.js"></script>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

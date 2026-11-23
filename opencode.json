@@ -1,7 +1,4 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "variant": "low",
-  "permission": {
-    "bash": "ask"
-  }
+  "variant": "low"
 }
