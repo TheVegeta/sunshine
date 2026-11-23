@@ -134,466 +134,454 @@
       >
     </div>
 
-    <div id="smooth-wrapper">
-      <div id="smooth-content">
-        <main id="main-content" class="pt-32 md:pt-40 pb-24">
-          <section class="px-6 md:px-10 mb-16 md:mb-24">
-            <div
-              class="max-w-[1400px] mx-auto grid md:grid-cols-12 gap-10 items-end"
-            >
-              <div class="md:col-span-7 reveal">
-                <p class="eyebrow mb-5">The collections</p>
-                <h1
-                  class="serif text-[clamp(2.8rem,7vw,6.5rem)] leading-[0.95] tracking-tight"
-                >
-                  Handcrafted forms,<br /><span class="italic text-accent"
-                    >curated with care.</span
-                  >
-                </h1>
-              </div>
-              <div class="md:col-span-4 md:col-start-9 reveal reveal-delay-1">
-                <p class="text-muted leading-relaxed">
-                  Each collection reflects a different mood — from quiet
-                  everyday pieces to nature-inspired forms and expressive
-                  statement designs. All made by hand, in small batches.
-                </p>
-              </div>
-            </div>
-          </section>
-
-          <section class="px-6 md:px-10">
-            <div class="max-w-[1400px] mx-auto">
-              <div
-                class="flex flex-wrap gap-x-8 gap-y-3 mb-12 pb-6 border-b border-[var(--line)] reveal"
-                role="group"
-                aria-label="Filter collections"
-              >
-                <button
-                  class="filter-btn active"
-                  data-filter="all"
-                  aria-pressed="true"
-                >
-                  All
-                </button>
-                <button
-                  class="filter-btn"
-                  data-filter="everyday"
-                  aria-pressed="false"
-                >
-                  Everyday Minimal
-                </button>
-                <button
-                  class="filter-btn"
-                  data-filter="nature"
-                  aria-pressed="false"
-                >
-                  Nature Inspired
-                </button>
-                <button
-                  class="filter-btn"
-                  data-filter="statement"
-                  aria-pressed="false"
-                >
-                  Statement Pieces
-                </button>
-              </div>
-
-              <div
-                class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-14"
-                id="collection-grid"
-              >
-                <!-- 1 -->
-                <article
-                  class="collection-item reveal"
-                  data-id="dawn-ring"
-                  data-category="everyday"
-                  data-title="The Dawn Ring"
-                  data-label="Everyday Minimal"
-                  data-image="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=1400&q=80"
-                  data-desc="A slim, gently polished ring designed for quiet everyday wear. Hand-shaped by Namita with a soft matte finish that catches light naturally."
-                >
-                  <a
-                    href="product.html?id=dawn-ring"
-                    class="block img-frame aspect-[3/4] mb-5"
-                  >
-                    <img
-                      src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=900&q=80"
-                      alt="The Dawn Ring, minimal handcrafted ring"
-                      loading="lazy"
-                      width="900"
-                      height="1200"
-                    />
-                  </a>
-                  <div class="flex items-start justify-between gap-4">
-                    <div>
-                      <p class="eyebrow mb-2">Everyday Minimal</p>
-                      <h2 class="serif text-2xl md:text-3xl">
-                        <a
-                          href="product.html?id=dawn-ring"
-                          class="no-underline text-inherit hover:text-accent transition-colors"
-                          >The Dawn Ring</a
-                        >
-                      </h2>
-                    </div>
-                    <button
-                      class="text-xs uppercase tracking-[.16em] text-muted hover:text-ink transition-colors pt-1"
-                      data-open-modal
-                      aria-label="Quick view The Dawn Ring"
-                    >
-                      Quick view
-                    </button>
-                  </div>
-                </article>
-                <!-- 2 -->
-                <article
-                  class="collection-item reveal"
-                  data-id="petal-drop-earrings"
-                  data-category="nature"
-                  data-title="Petal Drop Earrings"
-                  data-label="Nature Inspired"
-                  data-image="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1400&q=80"
-                  data-desc="Delicate drop earrings inspired by falling petals. Each curve is formed by hand, giving the pair an organic, effortless movement."
-                >
-                  <a
-                    href="product.html?id=petal-drop-earrings"
-                    class="block img-frame aspect-[3/4] mb-5"
-                  >
-                    <img
-                      src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=900&q=80"
-                      alt="Petal Drop Earrings, nature inspired handmade earrings"
-                      loading="lazy"
-                      width="900"
-                      height="1200"
-                    />
-                  </a>
-                  <div class="flex items-start justify-between gap-4">
-                    <div>
-                      <p class="eyebrow mb-2">Nature Inspired</p>
-                      <h2 class="serif text-2xl md:text-3xl">
-                        <a
-                          href="product.html?id=petal-drop-earrings"
-                          class="no-underline text-inherit hover:text-accent transition-colors"
-                          >Petal Drop Earrings</a
-                        >
-                      </h2>
-                    </div>
-                    <button
-                      class="text-xs uppercase tracking-[.16em] text-muted hover:text-ink transition-colors pt-1"
-                      data-open-modal
-                      aria-label="Quick view Petal Drop Earrings"
-                    >
-                      Quick view
-                    </button>
-                  </div>
-                </article>
-                <!-- 3 -->
-                <article
-                  class="collection-item reveal"
-                  data-id="sunlit-necklace"
-                  data-category="statement"
-                  data-title="Sunlit Necklace"
-                  data-label="Statement Pieces"
-                  data-image="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1400&q=80"
-                  data-desc="A warm, expressive necklace that sits beautifully at the collarbone. Crafted to feel bold yet natural — a piece that carries its own light."
-                >
-                  <a
-                    href="product.html?id=sunlit-necklace"
-                    class="block img-frame aspect-[3/4] mb-5"
-                  >
-                    <img
-                      src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=900&q=80"
-                      alt="Sunlit Necklace, handcrafted statement necklace"
-                      loading="lazy"
-                      width="900"
-                      height="1200"
-                    />
-                  </a>
-                  <div class="flex items-start justify-between gap-4">
-                    <div>
-                      <p class="eyebrow mb-2">Statement Pieces</p>
-                      <h2 class="serif text-2xl md:text-3xl">
-                        <a
-                          href="product.html?id=sunlit-necklace"
-                          class="no-underline text-inherit hover:text-accent transition-colors"
-                          >Sunlit Necklace</a
-                        >
-                      </h2>
-                    </div>
-                    <button
-                      class="text-xs uppercase tracking-[.16em] text-muted hover:text-ink transition-colors pt-1"
-                      data-open-modal
-                      aria-label="Quick view Sunlit Necklace"
-                    >
-                      Quick view
-                    </button>
-                  </div>
-                </article>
-                <!-- 4 -->
-                <article
-                  class="collection-item reveal"
-                  data-id="whisper-studs"
-                  data-category="everyday"
-                  data-title="Whisper Studs"
-                  data-label="Everyday Minimal"
-                  data-image="https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=1400&q=80"
-                  data-desc="Tiny, refined studs made for daily comfort. Their simple form makes them easy to wear alone or layered with other Sunshine pieces."
-                >
-                  <a
-                    href="product.html?id=whisper-studs"
-                    class="block img-frame aspect-[3/4] mb-5"
-                  >
-                    <img
-                      src="https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=900&q=80"
-                      alt="Whisper Studs, minimal handmade earrings"
-                      loading="lazy"
-                      width="900"
-                      height="1200"
-                    />
-                  </a>
-                  <div class="flex items-start justify-between gap-4">
-                    <div>
-                      <p class="eyebrow mb-2">Everyday Minimal</p>
-                      <h2 class="serif text-2xl md:text-3xl">
-                        <a
-                          href="product.html?id=whisper-studs"
-                          class="no-underline text-inherit hover:text-accent transition-colors"
-                          >Whisper Studs</a
-                        >
-                      </h2>
-                    </div>
-                    <button
-                      class="text-xs uppercase tracking-[.16em] text-muted hover:text-ink transition-colors pt-1"
-                      data-open-modal
-                    >
-                      Quick view
-                    </button>
-                  </div>
-                </article>
-                <!-- 5 -->
-                <article
-                  class="collection-item reveal"
-                  data-id="leaf-wrap-cuff"
-                  data-category="nature"
-                  data-title="Leaf Wrap Cuff"
-                  data-label="Nature Inspired"
-                  data-image="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=1400&q=80"
-                  data-desc="A gentle cuff with organic contours inspired by natural leaf forms. Hand-finished to preserve subtle texture and warmth."
-                >
-                  <a
-                    href="product.html?id=leaf-wrap-cuff"
-                    class="block img-frame aspect-[3/4] mb-5"
-                  >
-                    <img
-                      src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=900&q=80"
-                      alt="Leaf Wrap Cuff, nature inspired handmade bracelet"
-                      loading="lazy"
-                      width="900"
-                      height="1200"
-                    />
-                  </a>
-                  <div class="flex items-start justify-between gap-4">
-                    <div>
-                      <p class="eyebrow mb-2">Nature Inspired</p>
-                      <h2 class="serif text-2xl md:text-3xl">
-                        <a
-                          href="product.html?id=leaf-wrap-cuff"
-                          class="no-underline text-inherit hover:text-accent transition-colors"
-                          >Leaf Wrap Cuff</a
-                        >
-                      </h2>
-                    </div>
-                    <button
-                      class="text-xs uppercase tracking-[.16em] text-muted hover:text-ink transition-colors pt-1"
-                      data-open-modal
-                    >
-                      Quick view
-                    </button>
-                  </div>
-                </article>
-                <!-- 6 -->
-                <article
-                  class="collection-item reveal"
-                  data-id="halo-pendant"
-                  data-category="statement"
-                  data-title="Halo Pendant"
-                  data-label="Statement Pieces"
-                  data-image="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1400&q=80"
-                  data-desc="A sculptural pendant with a quiet presence. Designed to stand alone, it reflects Namita's love for simple forms with emotional weight."
-                >
-                  <a
-                    href="product.html?id=halo-pendant"
-                    class="block img-frame aspect-[3/4] mb-5"
-                  >
-                    <img
-                      src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=900&q=80"
-                      alt="Halo Pendant, handcrafted statement jewelry"
-                      loading="lazy"
-                      width="900"
-                      height="1200"
-                    />
-                  </a>
-                  <div class="flex items-start justify-between gap-4">
-                    <div>
-                      <p class="eyebrow mb-2">Statement Pieces</p>
-                      <h2 class="serif text-2xl md:text-3xl">
-                        <a
-                          href="product.html?id=halo-pendant"
-                          class="no-underline text-inherit hover:text-accent transition-colors"
-                          >Halo Pendant</a
-                        >
-                      </h2>
-                    </div>
-                    <button
-                      class="text-xs uppercase tracking-[.16em] text-muted hover:text-ink transition-colors pt-1"
-                      data-open-modal
-                    >
-                      Quick view
-                    </button>
-                  </div>
-                </article>
-              </div>
-            </div>
-          </section>
-
-          <section class="px-6 md:px-10 mt-24 md:mt-32">
-            <div
-              class="max-w-[1400px] mx-auto p-10 md:p-16 bg-stonewarm/50 grid md:grid-cols-12 gap-8 items-center reveal"
-            >
-              <div class="md:col-span-8">
-                <p class="eyebrow mb-4">A personal note</p>
-                <h2 class="serif text-3xl md:text-5xl leading-tight">
-                  Looking for something made just for you?
-                </h2>
-                <p class="text-muted mt-4 max-w-2xl leading-relaxed">
-                  Namita welcomes custom inquiries for special pieces. Share
-                  your idea, and she'll craft it slowly by hand.
-                </p>
-              </div>
-              <div class="md:col-span-4 md:justify-self-end">
-                <a href="contact.html" class="btn btn-solid" data-magnetic
-                  >Custom Inquiry</a
-                >
-              </div>
-            </div>
-          </section>
-        </main>
-
-        <!-- Quick view modal -->
+    <main id="main-content" class="pt-32 md:pt-40 pb-24">
+      <section class="px-6 md:px-10 mb-10 md:mb-14">
         <div
-          class="modal"
-          id="quick-view"
-          aria-hidden="true"
-          role="dialog"
-          aria-modal="true"
-          aria-label="Piece details"
+          class="max-w-[1400px] mx-auto grid md:grid-cols-12 gap-6 md:gap-10 items-end"
         >
-          <div class="modal-backdrop" data-close-modal></div>
-          <div class="modal-panel">
-            <button
-              class="modal-close"
-              data-close-modal
-              aria-label="Close dialog"
+          <div class="md:col-span-7 reveal">
+            <p class="eyebrow mb-4">The collections</p>
+            <h1
+              class="serif text-[clamp(2.4rem,5.8vw,5rem)] leading-[0.96] tracking-tight"
             >
-              &times;
-            </button>
-            <div class="modal-img img-frame min-h-[340px] md:min-h-full">
-              <img
-                data-modal-img
-                src=""
-                alt="Selected jewelry piece preview"
-                class="w-full h-full object-cover"
-                width="900"
-                height="1200"
-              />
-            </div>
-            <div class="p-8 md:p-12 flex flex-col justify-center">
-              <p class="eyebrow mb-4" data-modal-cat></p>
-              <h2
-                class="serif text-4xl md:text-5xl leading-tight mb-6"
-                data-modal-title
-              ></h2>
-              <p class="text-muted leading-relaxed mb-8" data-modal-desc></p>
-              <div class="line-grow visible mb-8"></div>
-              <p class="text-sm text-muted mb-8">
-                Handmade by Namita in small batches. For availability or custom
-                variations, reach out directly.
-              </p>
-              <div class="flex flex-wrap gap-4">
-                <a
-                  href="product.html"
-                  data-modal-link
-                  class="btn btn-solid w-fit"
-                  data-magnetic
-                  >View details</a
-                >
-                <a href="contact.html" class="btn w-fit" data-magnetic
-                  >Inquire</a
-                >
-              </div>
-            </div>
+              Handcrafted forms,<br /><span class="italic text-accent"
+                >curated with care.</span
+              >
+            </h1>
+          </div>
+          <div class="md:col-span-4 md:col-start-9 reveal reveal-delay-1">
+            <p
+              class="text-muted leading-relaxed text-[15px] max-w-sm md:ml-auto"
+            >
+              Small-batch pieces shaped by mood — from everyday essentials to
+              nature-led statements.
+            </p>
           </div>
         </div>
+      </section>
 
-        <footer
-          class="px-6 md:px-10 py-16 md:py-20 border-t border-[var(--line)] bg-stonewarm/30"
-        >
-          <div class="max-w-[1400px] mx-auto grid md:grid-cols-12 gap-12">
-            <div class="md:col-span-4">
-              <a
-                href="index.html"
-                class="font-serif text-3xl tracking-wide text-ink no-underline"
-                >sun<span class="italic text-accent">shine</span></a
-              >
-              <p class="mt-5 text-muted leading-relaxed max-w-sm">
-                Handmade jewelry by Namita. Small-batch, slow-made, and crafted
-                with warmth.
-              </p>
-            </div>
-            <div class="md:col-span-2 md:col-start-7">
-              <p class="eyebrow mb-4">Pages</p>
-              <div class="flex flex-col gap-3 text-sm text-muted">
-                <a href="index.html" class="hover:text-ink transition-colors"
-                  >Home</a
-                >
-                <a
-                  href="collections.html"
-                  class="hover:text-ink transition-colors"
-                  >Collections</a
-                >
-                <a href="story.html" class="hover:text-ink transition-colors"
-                  >Our Story</a
-                >
-                <a href="contact.html" class="hover:text-ink transition-colors"
-                  >Contact</a
-                >
-              </div>
-            </div>
-            <div class="md:col-span-3 md:col-start-10">
-              <p class="eyebrow mb-4">Connect</p>
-              <div class="flex flex-col gap-3 text-sm text-muted">
-                <a
-                  href="https://www.instagram.com/sunshine_handicraft_n/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="hover:text-ink transition-colors"
-                  >Instagram ↗</a
-                >
-                <a href="contact.html" class="hover:text-ink transition-colors"
-                  >Custom inquiries</a
-                >
-              </div>
-            </div>
-          </div>
+      <section class="px-6 md:px-10">
+        <div class="max-w-[1400px] mx-auto">
           <div
-            class="max-w-[1400px] mx-auto mt-14 pt-6 border-t border-[var(--line)] flex flex-col sm:flex-row gap-4 justify-between text-xs tracking-wide text-muted uppercase"
+            class="flex flex-wrap gap-x-8 gap-y-3 mb-12 pb-6 border-b border-[var(--line)] reveal"
+            role="group"
+            aria-label="Filter collections"
           >
-            <span>© <span data-year></span> Sunshine Handmade</span
-            ><span>Made slowly by Namita</span>
+            <button
+              class="filter-btn active"
+              data-filter="all"
+              aria-pressed="true"
+            >
+              All
+            </button>
+            <button
+              class="filter-btn"
+              data-filter="everyday"
+              aria-pressed="false"
+            >
+              Everyday Minimal
+            </button>
+            <button
+              class="filter-btn"
+              data-filter="nature"
+              aria-pressed="false"
+            >
+              Nature Inspired
+            </button>
+            <button
+              class="filter-btn"
+              data-filter="statement"
+              aria-pressed="false"
+            >
+              Statement Pieces
+            </button>
           </div>
-        </footer>
+
+          <div
+            class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-14"
+            id="collection-grid"
+          >
+            <!-- 1 -->
+            <article
+              class="collection-item reveal"
+              data-id="dawn-ring"
+              data-category="everyday"
+              data-title="The Dawn Ring"
+              data-label="Everyday Minimal"
+              data-image="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=1400&q=80"
+              data-desc="A slim, gently polished ring designed for quiet everyday wear. Hand-shaped by Namita with a soft matte finish that catches light naturally."
+            >
+              <a
+                href="product.html?id=dawn-ring"
+                class="block img-frame aspect-[3/4] mb-5"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=900&q=80"
+                  alt="The Dawn Ring, minimal handcrafted ring"
+                  loading="lazy"
+                  width="900"
+                  height="1200"
+                />
+              </a>
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <p class="eyebrow mb-2">Everyday Minimal</p>
+                  <h2 class="serif text-2xl md:text-3xl">
+                    <a
+                      href="product.html?id=dawn-ring"
+                      class="no-underline text-inherit hover:text-accent transition-colors"
+                      >The Dawn Ring</a
+                    >
+                  </h2>
+                </div>
+                <button
+                  class="text-xs uppercase tracking-[.16em] text-muted hover:text-ink transition-colors pt-1"
+                  data-open-modal
+                  aria-label="Quick view The Dawn Ring"
+                >
+                  Quick view
+                </button>
+              </div>
+            </article>
+            <!-- 2 -->
+            <article
+              class="collection-item reveal"
+              data-id="petal-drop-earrings"
+              data-category="nature"
+              data-title="Petal Drop Earrings"
+              data-label="Nature Inspired"
+              data-image="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1400&q=80"
+              data-desc="Delicate drop earrings inspired by falling petals. Each curve is formed by hand, giving the pair an organic, effortless movement."
+            >
+              <a
+                href="product.html?id=petal-drop-earrings"
+                class="block img-frame aspect-[3/4] mb-5"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=900&q=80"
+                  alt="Petal Drop Earrings, nature inspired handmade earrings"
+                  loading="lazy"
+                  width="900"
+                  height="1200"
+                />
+              </a>
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <p class="eyebrow mb-2">Nature Inspired</p>
+                  <h2 class="serif text-2xl md:text-3xl">
+                    <a
+                      href="product.html?id=petal-drop-earrings"
+                      class="no-underline text-inherit hover:text-accent transition-colors"
+                      >Petal Drop Earrings</a
+                    >
+                  </h2>
+                </div>
+                <button
+                  class="text-xs uppercase tracking-[.16em] text-muted hover:text-ink transition-colors pt-1"
+                  data-open-modal
+                  aria-label="Quick view Petal Drop Earrings"
+                >
+                  Quick view
+                </button>
+              </div>
+            </article>
+            <!-- 3 -->
+            <article
+              class="collection-item reveal"
+              data-id="sunlit-necklace"
+              data-category="statement"
+              data-title="Sunlit Necklace"
+              data-label="Statement Pieces"
+              data-image="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1400&q=80"
+              data-desc="A warm, expressive necklace that sits beautifully at the collarbone. Crafted to feel bold yet natural — a piece that carries its own light."
+            >
+              <a
+                href="product.html?id=sunlit-necklace"
+                class="block img-frame aspect-[3/4] mb-5"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=900&q=80"
+                  alt="Sunlit Necklace, handcrafted statement necklace"
+                  loading="lazy"
+                  width="900"
+                  height="1200"
+                />
+              </a>
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <p class="eyebrow mb-2">Statement Pieces</p>
+                  <h2 class="serif text-2xl md:text-3xl">
+                    <a
+                      href="product.html?id=sunlit-necklace"
+                      class="no-underline text-inherit hover:text-accent transition-colors"
+                      >Sunlit Necklace</a
+                    >
+                  </h2>
+                </div>
+                <button
+                  class="text-xs uppercase tracking-[.16em] text-muted hover:text-ink transition-colors pt-1"
+                  data-open-modal
+                  aria-label="Quick view Sunlit Necklace"
+                >
+                  Quick view
+                </button>
+              </div>
+            </article>
+            <!-- 4 -->
+            <article
+              class="collection-item reveal"
+              data-id="whisper-studs"
+              data-category="everyday"
+              data-title="Whisper Studs"
+              data-label="Everyday Minimal"
+              data-image="https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=1400&q=80"
+              data-desc="Tiny, refined studs made for daily comfort. Their simple form makes them easy to wear alone or layered with other Sunshine pieces."
+            >
+              <a
+                href="product.html?id=whisper-studs"
+                class="block img-frame aspect-[3/4] mb-5"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=900&q=80"
+                  alt="Whisper Studs, minimal handmade earrings"
+                  loading="lazy"
+                  width="900"
+                  height="1200"
+                />
+              </a>
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <p class="eyebrow mb-2">Everyday Minimal</p>
+                  <h2 class="serif text-2xl md:text-3xl">
+                    <a
+                      href="product.html?id=whisper-studs"
+                      class="no-underline text-inherit hover:text-accent transition-colors"
+                      >Whisper Studs</a
+                    >
+                  </h2>
+                </div>
+                <button
+                  class="text-xs uppercase tracking-[.16em] text-muted hover:text-ink transition-colors pt-1"
+                  data-open-modal
+                >
+                  Quick view
+                </button>
+              </div>
+            </article>
+            <!-- 5 -->
+            <article
+              class="collection-item reveal"
+              data-id="leaf-wrap-cuff"
+              data-category="nature"
+              data-title="Leaf Wrap Cuff"
+              data-label="Nature Inspired"
+              data-image="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=1400&q=80"
+              data-desc="A gentle cuff with organic contours inspired by natural leaf forms. Hand-finished to preserve subtle texture and warmth."
+            >
+              <a
+                href="product.html?id=leaf-wrap-cuff"
+                class="block img-frame aspect-[3/4] mb-5"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=900&q=80"
+                  alt="Leaf Wrap Cuff, nature inspired handmade bracelet"
+                  loading="lazy"
+                  width="900"
+                  height="1200"
+                />
+              </a>
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <p class="eyebrow mb-2">Nature Inspired</p>
+                  <h2 class="serif text-2xl md:text-3xl">
+                    <a
+                      href="product.html?id=leaf-wrap-cuff"
+                      class="no-underline text-inherit hover:text-accent transition-colors"
+                      >Leaf Wrap Cuff</a
+                    >
+                  </h2>
+                </div>
+                <button
+                  class="text-xs uppercase tracking-[.16em] text-muted hover:text-ink transition-colors pt-1"
+                  data-open-modal
+                >
+                  Quick view
+                </button>
+              </div>
+            </article>
+            <!-- 6 -->
+            <article
+              class="collection-item reveal"
+              data-id="halo-pendant"
+              data-category="statement"
+              data-title="Halo Pendant"
+              data-label="Statement Pieces"
+              data-image="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1400&q=80"
+              data-desc="A sculptural pendant with a quiet presence. Designed to stand alone, it reflects Namita's love for simple forms with emotional weight."
+            >
+              <a
+                href="product.html?id=halo-pendant"
+                class="block img-frame aspect-[3/4] mb-5"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=900&q=80"
+                  alt="Halo Pendant, handcrafted statement jewelry"
+                  loading="lazy"
+                  width="900"
+                  height="1200"
+                />
+              </a>
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <p class="eyebrow mb-2">Statement Pieces</p>
+                  <h2 class="serif text-2xl md:text-3xl">
+                    <a
+                      href="product.html?id=halo-pendant"
+                      class="no-underline text-inherit hover:text-accent transition-colors"
+                      >Halo Pendant</a
+                    >
+                  </h2>
+                </div>
+                <button
+                  class="text-xs uppercase tracking-[.16em] text-muted hover:text-ink transition-colors pt-1"
+                  data-open-modal
+                >
+                  Quick view
+                </button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="px-6 md:px-10 mt-24 md:mt-32">
+        <div
+          class="max-w-[1400px] mx-auto p-10 md:p-16 bg-stonewarm/50 grid md:grid-cols-12 gap-8 items-center reveal"
+        >
+          <div class="md:col-span-8">
+            <p class="eyebrow mb-4">A personal note</p>
+            <h2 class="serif text-3xl md:text-5xl leading-tight">
+              Looking for something made just for you?
+            </h2>
+            <p class="text-muted mt-4 max-w-2xl leading-relaxed">
+              Namita welcomes custom inquiries for special pieces. Share your
+              idea, and she'll craft it slowly by hand.
+            </p>
+          </div>
+          <div class="md:col-span-4 md:justify-self-end">
+            <a href="contact.html" class="btn btn-solid" data-magnetic
+              >Custom Inquiry</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Quick view modal -->
+    <div
+      class="modal"
+      id="quick-view"
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Piece details"
+    >
+      <div class="modal-backdrop" data-close-modal></div>
+      <div class="modal-panel">
+        <button class="modal-close" data-close-modal aria-label="Close dialog">
+          &times;
+        </button>
+        <div class="modal-img img-frame min-h-[340px] md:min-h-full">
+          <img
+            data-modal-img
+            src=""
+            alt="Selected jewelry piece preview"
+            class="w-full h-full object-cover"
+            width="900"
+            height="1200"
+          />
+        </div>
+        <div class="p-8 md:p-12 flex flex-col justify-center">
+          <p class="eyebrow mb-4" data-modal-cat></p>
+          <h2
+            class="serif text-4xl md:text-5xl leading-tight mb-6"
+            data-modal-title
+          ></h2>
+          <p class="text-muted leading-relaxed mb-8" data-modal-desc></p>
+          <div class="line-grow visible mb-8"></div>
+          <p class="text-sm text-muted mb-8">
+            Handmade by Namita in small batches. For availability or custom
+            variations, reach out directly.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a
+              href="product.html"
+              data-modal-link
+              class="btn btn-solid w-fit"
+              data-magnetic
+              >View details</a
+            >
+            <a href="contact.html" class="btn w-fit" data-magnetic>Inquire</a>
+          </div>
+        </div>
       </div>
     </div>
 
+    <footer
+      class="px-6 md:px-10 py-16 md:py-20 border-t border-[var(--line)] bg-stonewarm/30"
+    >
+      <div class="max-w-[1400px] mx-auto grid md:grid-cols-12 gap-12">
+        <div class="md:col-span-4">
+          <a
+            href="index.html"
+            class="font-serif text-3xl tracking-wide text-ink no-underline"
+            >sun<span class="italic text-accent">shine</span></a
+          >
+          <p class="mt-5 text-muted leading-relaxed max-w-sm">
+            Handmade jewelry by Namita. Small-batch, slow-made, and crafted with
+            warmth.
+          </p>
+        </div>
+        <div class="md:col-span-2 md:col-start-7">
+          <p class="eyebrow mb-4">Pages</p>
+          <div class="flex flex-col gap-3 text-sm text-muted">
+            <a href="index.html" class="hover:text-ink transition-colors"
+              >Home</a
+            >
+            <a href="collections.html" class="hover:text-ink transition-colors"
+              >Collections</a
+            >
+            <a href="story.html" class="hover:text-ink transition-colors"
+              >Our Story</a
+            >
+            <a href="contact.html" class="hover:text-ink transition-colors"
+              >Contact</a
+            >
+          </div>
+        </div>
+        <div class="md:col-span-3 md:col-start-10">
+          <p class="eyebrow mb-4">Connect</p>
+          <div class="flex flex-col gap-3 text-sm text-muted">
+            <a
+              href="https://www.instagram.com/sunshine_handicraft_n/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hover:text-ink transition-colors"
+              >Instagram ↗</a
+            >
+            <a href="contact.html" class="hover:text-ink transition-colors"
+              >Custom inquiries</a
+            >
+          </div>
+        </div>
+      </div>
+      <div
+        class="max-w-[1400px] mx-auto mt-14 pt-6 border-t border-[var(--line)] flex flex-col sm:flex-row gap-4 justify-between text-xs tracking-wide text-muted uppercase"
+      >
+        <span>© <span data-year></span> Sunshine Handmade</span
+        ><span>Made slowly by Namita</span>
+      </div>
+    </footer>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -608,9 +596,6 @@
         }
       }
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollSmoother.min.js"></script>
     <script src="assets/js/main.js"></script>
   </body>
 </html>

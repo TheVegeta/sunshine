@@ -128,165 +128,120 @@
       >
     </div>
 
-    <div id="smooth-wrapper">
-      <div id="smooth-content">
-        <main id="main-content" class="pt-32 md:pt-40 pb-24">
-          <!-- HERO -->
-          <section class="px-6 md:px-10 mb-16 md:mb-20">
-            <div
-              class="max-w-[1400px] mx-auto grid md:grid-cols-12 gap-10 md:gap-12 items-end"
+    <main id="main-content" class="pt-32 md:pt-40 pb-24">
+      <!-- HERO -->
+      <section class="px-6 md:px-10 mb-16 md:mb-20">
+        <div
+          class="max-w-[1400px] mx-auto grid md:grid-cols-12 gap-10 md:gap-12 items-end"
+        >
+          <div class="md:col-span-7 reveal">
+            <p class="eyebrow mb-5">Inquiries & custom orders</p>
+            <h1
+              class="serif text-[clamp(2.8rem,7vw,6.5rem)] leading-[0.95] tracking-tight"
             >
-              <div class="md:col-span-7 reveal">
-                <p class="eyebrow mb-5">Inquiries & custom orders</p>
-                <h1
-                  class="serif text-[clamp(2.8rem,7vw,6.5rem)] leading-[0.95] tracking-tight"
-                >
-                  Let's create something
-                  <span class="italic text-accent">beautiful.</span>
-                </h1>
-                <p
-                  class="mt-8 max-w-2xl text-muted leading-relaxed text-base md:text-lg"
-                >
-                  Whether you're dreaming of a custom piece, asking about a
-                  collection, or simply want to say hello — Namita would love to
-                  hear from you.
-                </p>
+              Let's create something
+              <span class="italic text-accent">beautiful.</span>
+            </h1>
+            <p
+              class="mt-8 max-w-2xl text-muted leading-relaxed text-base md:text-lg"
+            >
+              Whether you're dreaming of a custom piece, asking about a
+              collection, or simply want to say hello — Namita would love to
+              hear from you.
+            </p>
+          </div>
+          <div class="md:col-span-5 reveal reveal-delay-1">
+            <div class="relative">
+              <div class="img-frame aspect-[4/3.5] border border-[var(--line)]">
+                <img
+                  src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=1200&q=80"
+                  alt="Handmade jewelry close-up in warm natural light"
+                  loading="eager"
+                  width="1200"
+                  height="1050"
+                />
               </div>
-              <div class="md:col-span-5 reveal reveal-delay-1">
-                <div class="relative">
-                  <div
-                    class="img-frame aspect-[4/3.5] border border-[var(--line)]"
-                  >
-                    <img
-                      src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=1200&q=80"
-                      alt="Handmade jewelry close-up in warm natural light"
-                      loading="eager"
-                      width="1200"
-                      height="1050"
-                    />
-                  </div>
-                  <div
-                    class="absolute -bottom-4 -left-4 bg-sand border border-[var(--line)] px-5 py-4 hidden sm:block"
-                  >
-                    <p class="eyebrow !mb-1">Made by Namita</p>
-                    <p class="serif text-xl">Personal, slow, handmade</p>
-                  </div>
-                </div>
+              <div
+                class="absolute -bottom-4 -left-4 bg-sand border border-[var(--line)] px-5 py-4 hidden sm:block"
+              >
+                <p class="eyebrow !mb-1">Made by Namita</p>
+                <p class="serif text-xl">Personal, slow, handmade</p>
               </div>
             </div>
-          </section>
+          </div>
+        </div>
+      </section>
 
-          <!-- CONTACT BODY -->
-          <section class="px-6 md:px-10">
+      <!-- CONTACT BODY -->
+      <section class="px-6 md:px-10">
+        <div
+          class="max-w-[1400px] mx-auto grid lg:grid-cols-12 gap-10 md:gap-12 items-start"
+        >
+          <!-- Form -->
+          <div class="lg:col-span-7 reveal">
             <div
-              class="max-w-[1400px] mx-auto grid lg:grid-cols-12 gap-10 md:gap-12 items-start"
+              class="bg-stonewarm/20 border border-[var(--line)] p-7 md:p-10 lg:p-12"
             >
-              <!-- Form -->
-              <div class="lg:col-span-7 reveal">
-                <div
-                  class="bg-stonewarm/20 border border-[var(--line)] p-7 md:p-10 lg:p-12"
-                >
-                  <p class="eyebrow mb-4">Send a message</p>
-                  <h2 class="serif text-3xl md:text-5xl leading-tight mb-3">
-                    Tell Namita what you're dreaming of.
-                  </h2>
-                  <p class="text-muted leading-relaxed mb-10 max-w-2xl">
-                    Share as much or as little as you like — a feeling, an
-                    occasion, a reference, or a piece you already love.
-                  </p>
+              <p class="eyebrow mb-4">Send a message</p>
+              <h2 class="serif text-3xl md:text-5xl leading-tight mb-3">
+                Tell Namita what you're dreaming of.
+              </h2>
+              <p class="text-muted leading-relaxed mb-10 max-w-2xl">
+                Share as much or as little as you like — a feeling, an occasion,
+                a reference, or a piece you already love.
+              </p>
 
-                  <form id="inquiry-form" class="space-y-8" novalidate>
-                    <div class="grid sm:grid-cols-2 gap-8">
-                      <label class="block">
-                        <span class="eyebrow block mb-3">Your name</span>
-                        <input
-                          class="field"
-                          type="text"
-                          name="name"
-                          autocomplete="name"
-                          required
-                          placeholder="Jane Doe"
-                        />
-                      </label>
-                      <label class="block">
-                        <span class="eyebrow block mb-3">Email address</span>
-                        <input
-                          class="field"
-                          type="email"
-                          name="email"
-                          autocomplete="email"
-                          required
-                          placeholder="you@example.com"
-                        />
-                      </label>
-                    </div>
-                    <label class="block">
-                      <span class="eyebrow block mb-3">I'm interested in</span>
-                      <select class="field" name="interest">
-                        <option value="Custom order">A custom piece</option>
-                        <option value="Existing collection">
-                          An existing collection piece
-                        </option>
-                        <option value="Gift inquiry">A gift inquiry</option>
-                        <option value="Collaboration">A collaboration</option>
-                        <option value="General hello">Just saying hello</option>
-                      </select>
-                    </label>
-                    <label class="block">
-                      <span class="eyebrow block mb-3">Your message</span>
-                      <textarea
-                        class="field"
-                        name="message"
-                        required
-                        placeholder="Tell Namita about the piece you're imagining, the occasion, or anything you'd like to share..."
-                      ></textarea>
-                    </label>
-                    <div
-                      class="flex flex-col sm:flex-row sm:items-center gap-5 pt-2"
-                    >
-                      <button type="submit" class="btn btn-solid" data-magnetic>
-                        Send Inquiry
-                        <svg
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="1.5"
-                        >
-                          <path d="M7 17 17 7M7 7h10v10" />
-                        </svg>
-                      </button>
-                      <p
-                        id="form-status"
-                        class="text-sm text-muted opacity-0 transition-opacity duration-300 max-w-sm"
-                        aria-live="polite"
-                      ></p>
-                    </div>
-                  </form>
+              <form id="inquiry-form" class="space-y-8" novalidate>
+                <div class="grid sm:grid-cols-2 gap-8">
+                  <label class="block">
+                    <span class="eyebrow block mb-3">Your name</span>
+                    <input
+                      class="field"
+                      type="text"
+                      name="name"
+                      autocomplete="name"
+                      required
+                      placeholder="Jane Doe"
+                    />
+                  </label>
+                  <label class="block">
+                    <span class="eyebrow block mb-3">Email address</span>
+                    <input
+                      class="field"
+                      type="email"
+                      name="email"
+                      autocomplete="email"
+                      required
+                      placeholder="you@example.com"
+                    />
+                  </label>
                 </div>
-              </div>
-
-              <!-- Contact details -->
-              <aside class="lg:col-span-5 reveal reveal-delay-1 space-y-6">
+                <label class="block">
+                  <span class="eyebrow block mb-3">I'm interested in</span>
+                  <select class="field" name="interest">
+                    <option value="Custom order">A custom piece</option>
+                    <option value="Existing collection">
+                      An existing collection piece
+                    </option>
+                    <option value="Gift inquiry">A gift inquiry</option>
+                    <option value="Collaboration">A collaboration</option>
+                    <option value="General hello">Just saying hello</option>
+                  </select>
+                </label>
+                <label class="block">
+                  <span class="eyebrow block mb-3">Your message</span>
+                  <textarea
+                    class="field"
+                    name="message"
+                    required
+                    placeholder="Tell Namita about the piece you're imagining, the occasion, or anything you'd like to share..."
+                  ></textarea>
+                </label>
                 <div
-                  class="border border-[var(--line)] bg-[#141210]/70 p-7 md:p-8"
+                  class="flex flex-col sm:flex-row sm:items-center gap-5 pt-2"
                 >
-                  <p class="eyebrow mb-4">Direct connection</p>
-                  <p class="serif text-3xl leading-tight mb-4">
-                    The quickest way to reach Namita.
-                  </p>
-                  <p class="text-muted leading-relaxed mb-6">
-                    Send a message on Instagram with your idea, a screenshot, or
-                    a piece you loved. It’s the easiest place to start a custom
-                    conversation.
-                  </p>
-                  <a
-                    href="https://www.instagram.com/sunshine_handicraft_n/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="btn w-fit"
-                    data-magnetic
-                  >
-                    @sunshine_handicraft_n
+                  <button type="submit" class="btn btn-solid" data-magnetic>
+                    Send Inquiry
                     <svg
                       viewBox="0 0 24 24"
                       fill="none"
@@ -295,172 +250,206 @@
                     >
                       <path d="M7 17 17 7M7 7h10v10" />
                     </svg>
-                  </a>
+                  </button>
+                  <p
+                    id="form-status"
+                    class="text-sm text-muted opacity-0 transition-opacity duration-300 max-w-sm"
+                    aria-live="polite"
+                  ></p>
                 </div>
-
-                <div class="grid sm:grid-cols-2 lg:grid-cols-1 gap-6">
-                  <div class="border border-[var(--line)] p-7 md:p-8">
-                    <p class="eyebrow mb-4">Custom orders</p>
-                    <p class="text-muted leading-relaxed">
-                      Custom pieces begin with a conversation. Share your
-                      thoughts, references, or the feeling you want the piece to
-                      carry — Namita will guide you from there.
-                    </p>
-                  </div>
-                  <div class="border border-[var(--line)] p-7 md:p-8">
-                    <p class="eyebrow mb-4">A gentle note</p>
-                    <p class="text-muted leading-relaxed">
-                      As a small handmade project, each piece takes time. Namita
-                      appreciates your patience and will respond as personally
-                      and promptly as possible.
-                    </p>
-                  </div>
-                </div>
-              </aside>
+              </form>
             </div>
-          </section>
+          </div>
 
-          <!-- FAQ -->
-          <section class="px-6 md:px-10 mt-24 md:mt-32">
-            <div class="max-w-[1400px] mx-auto grid md:grid-cols-12 gap-12">
-              <div class="md:col-span-4 reveal">
-                <p class="eyebrow mb-5">Good to know</p>
-                <h2 class="serif text-4xl md:text-5xl leading-tight">
-                  A few gentle <span class="italic">details.</span>
-                </h2>
-              </div>
-              <div class="md:col-span-7 md:col-start-6 reveal reveal-delay-1">
-                <div class="faq-item">
-                  <button class="faq-q" aria-expanded="false">
-                    <span>How long does a custom piece take?</span
-                    ><span class="faq-icon" aria-hidden="true"></span>
-                  </button>
-                  <div class="faq-a">
-                    <div>
-                      <p>
-                        Every piece is handmade by Namita, so timing depends on
-                        the design and current workload. Most custom pieces take
-                        a few weeks from conversation to completion. Namita will
-                        share an honest timeline when you inquire.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="faq-item">
-                  <button class="faq-q" aria-expanded="false">
-                    <span>Can I request a design I saw on Instagram?</span
-                    ><span class="faq-icon" aria-hidden="true"></span>
-                  </button>
-                  <div class="faq-a">
-                    <div>
-                      <p>
-                        Absolutely. If you've seen something you love on
-                        <a
-                          href="https://www.instagram.com/sunshine_handicraft_n/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          class="underline underline-offset-4 hover:text-ink"
-                          >@sunshine_handicraft_n</a
-                        >, send a screenshot or describe it in your message.
-                        Namita can recreate a similar feel or create something
-                        inspired by it.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="faq-item">
-                  <button class="faq-q" aria-expanded="false">
-                    <span>Do you ship orders?</span
-                    ><span class="faq-icon" aria-hidden="true"></span>
-                  </button>
-                  <div class="faq-a">
-                    <div>
-                      <p>
-                        Shipping details can be discussed during your inquiry.
-                        Since Sunshine is a small homemade project, Namita
-                        handles each order personally and will confirm the best
-                        delivery option for you.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="faq-item">
-                  <button class="faq-q" aria-expanded="false">
-                    <span>Are handmade pieces exactly identical?</span
-                    ><span class="faq-icon" aria-hidden="true"></span>
-                  </button>
-                  <div class="faq-a">
-                    <div>
-                      <p>
-                        Not exactly — and that's part of their charm. Small
-                        variations in shape, texture, or finish are natural in
-                        handmade work. They make your piece uniquely yours.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        </main>
-
-        <footer
-          class="px-6 md:px-10 py-16 md:py-20 border-t border-[var(--line)] bg-stonewarm/30"
-        >
-          <div class="max-w-[1400px] mx-auto grid md:grid-cols-12 gap-12">
-            <div class="md:col-span-4">
-              <a
-                href="index.html"
-                class="font-serif text-3xl tracking-wide text-ink no-underline"
-                >sun<span class="italic text-accent">shine</span></a
-              >
-              <p class="mt-5 text-muted leading-relaxed max-w-sm">
-                Handmade jewelry by Namita. Small-batch, slow-made, and crafted
-                with warmth.
+          <!-- Contact details -->
+          <aside class="lg:col-span-5 reveal reveal-delay-1 space-y-6">
+            <div class="border border-[var(--line)] bg-[#141210]/70 p-7 md:p-8">
+              <p class="eyebrow mb-4">Direct connection</p>
+              <p class="serif text-3xl leading-tight mb-4">
+                The quickest way to reach Namita.
               </p>
-            </div>
-            <div class="md:col-span-2 md:col-start-7">
-              <p class="eyebrow mb-4">Pages</p>
-              <div class="flex flex-col gap-3 text-sm text-muted">
-                <a href="index.html" class="hover:text-ink transition-colors"
-                  >Home</a
-                ><a
-                  href="collections.html"
-                  class="hover:text-ink transition-colors"
-                  >Collections</a
-                ><a href="story.html" class="hover:text-ink transition-colors"
-                  >Our Story</a
-                ><a href="contact.html" class="hover:text-ink transition-colors"
-                  >Contact</a
+              <p class="text-muted leading-relaxed mb-6">
+                Send a message on Instagram with your idea, a screenshot, or a
+                piece you loved. It’s the easiest place to start a custom
+                conversation.
+              </p>
+              <a
+                href="https://www.instagram.com/sunshine_handicraft_n/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn w-fit"
+                data-magnetic
+              >
+                @sunshine_handicraft_n
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
                 >
-              </div>
+                  <path d="M7 17 17 7M7 7h10v10" />
+                </svg>
+              </a>
             </div>
-            <div class="md:col-span-3 md:col-start-10">
-              <p class="eyebrow mb-4">Connect</p>
-              <div class="flex flex-col gap-3 text-sm text-muted">
-                <a
-                  href="https://www.instagram.com/sunshine_handicraft_n/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="hover:text-ink transition-colors"
-                  >Instagram ↗</a
-                >
-                <a href="contact.html" class="hover:text-ink transition-colors"
-                  >Custom inquiries</a
-                >
-              </div>
-            </div>
-          </div>
-          <div
-            class="max-w-[1400px] mx-auto mt-14 pt-6 border-t border-[var(--line)] flex flex-col sm:flex-row gap-4 justify-between text-xs tracking-wide text-muted uppercase"
-          >
-            <span>© <span data-year></span> Sunshine Handmade</span
-            ><span>Made slowly by Namita</span>
-          </div>
-        </footer>
-      </div>
-    </div>
 
+            <div class="grid sm:grid-cols-2 lg:grid-cols-1 gap-6">
+              <div class="border border-[var(--line)] p-7 md:p-8">
+                <p class="eyebrow mb-4">Custom orders</p>
+                <p class="text-muted leading-relaxed">
+                  Custom pieces begin with a conversation. Share your thoughts,
+                  references, or the feeling you want the piece to carry —
+                  Namita will guide you from there.
+                </p>
+              </div>
+              <div class="border border-[var(--line)] p-7 md:p-8">
+                <p class="eyebrow mb-4">A gentle note</p>
+                <p class="text-muted leading-relaxed">
+                  As a small handmade project, each piece takes time. Namita
+                  appreciates your patience and will respond as personally and
+                  promptly as possible.
+                </p>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="px-6 md:px-10 mt-24 md:mt-32">
+        <div class="max-w-[1400px] mx-auto grid md:grid-cols-12 gap-12">
+          <div class="md:col-span-4 reveal">
+            <p class="eyebrow mb-5">Good to know</p>
+            <h2 class="serif text-4xl md:text-5xl leading-tight">
+              A few gentle <span class="italic">details.</span>
+            </h2>
+          </div>
+          <div class="md:col-span-7 md:col-start-6 reveal reveal-delay-1">
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">
+                <span>How long does a custom piece take?</span
+                ><span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-a">
+                <div>
+                  <p>
+                    Every piece is handmade by Namita, so timing depends on the
+                    design and current workload. Most custom pieces take a few
+                    weeks from conversation to completion. Namita will share an
+                    honest timeline when you inquire.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">
+                <span>Can I request a design I saw on Instagram?</span
+                ><span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-a">
+                <div>
+                  <p>
+                    Absolutely. If you've seen something you love on
+                    <a
+                      href="https://www.instagram.com/sunshine_handicraft_n/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="underline underline-offset-4 hover:text-ink"
+                      >@sunshine_handicraft_n</a
+                    >, send a screenshot or describe it in your message. Namita
+                    can recreate a similar feel or create something inspired by
+                    it.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">
+                <span>Do you ship orders?</span
+                ><span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-a">
+                <div>
+                  <p>
+                    Shipping details can be discussed during your inquiry. Since
+                    Sunshine is a small homemade project, Namita handles each
+                    order personally and will confirm the best delivery option
+                    for you.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">
+                <span>Are handmade pieces exactly identical?</span
+                ><span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-a">
+                <div>
+                  <p>
+                    Not exactly — and that's part of their charm. Small
+                    variations in shape, texture, or finish are natural in
+                    handmade work. They make your piece uniquely yours.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="px-6 md:px-10 py-16 md:py-20 border-t border-[var(--line)] bg-stonewarm/30"
+    >
+      <div class="max-w-[1400px] mx-auto grid md:grid-cols-12 gap-12">
+        <div class="md:col-span-4">
+          <a
+            href="index.html"
+            class="font-serif text-3xl tracking-wide text-ink no-underline"
+            >sun<span class="italic text-accent">shine</span></a
+          >
+          <p class="mt-5 text-muted leading-relaxed max-w-sm">
+            Handmade jewelry by Namita. Small-batch, slow-made, and crafted with
+            warmth.
+          </p>
+        </div>
+        <div class="md:col-span-2 md:col-start-7">
+          <p class="eyebrow mb-4">Pages</p>
+          <div class="flex flex-col gap-3 text-sm text-muted">
+            <a href="index.html" class="hover:text-ink transition-colors"
+              >Home</a
+            ><a href="collections.html" class="hover:text-ink transition-colors"
+              >Collections</a
+            ><a href="story.html" class="hover:text-ink transition-colors"
+              >Our Story</a
+            ><a href="contact.html" class="hover:text-ink transition-colors"
+              >Contact</a
+            >
+          </div>
+        </div>
+        <div class="md:col-span-3 md:col-start-10">
+          <p class="eyebrow mb-4">Connect</p>
+          <div class="flex flex-col gap-3 text-sm text-muted">
+            <a
+              href="https://www.instagram.com/sunshine_handicraft_n/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hover:text-ink transition-colors"
+              >Instagram ↗</a
+            >
+            <a href="contact.html" class="hover:text-ink transition-colors"
+              >Custom inquiries</a
+            >
+          </div>
+        </div>
+      </div>
+      <div
+        class="max-w-[1400px] mx-auto mt-14 pt-6 border-t border-[var(--line)] flex flex-col sm:flex-row gap-4 justify-between text-xs tracking-wide text-muted uppercase"
+      >
+        <span>© <span data-year></span> Sunshine Handmade</span
+        ><span>Made slowly by Namita</span>
+      </div>
+    </footer>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -517,9 +506,6 @@
         ]
       }
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollSmoother.min.js"></script>
     <script src="assets/js/main.js"></script>
   </body>
 </html>

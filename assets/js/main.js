@@ -2,33 +2,6 @@
 const prefersReduced = window.matchMedia(
   "(prefers-reduced-motion: reduce)",
 ).matches;
-let smoother = null;
-
-function getScrollY() {
-  return smoother ? smoother.scrollTop() : window.scrollY;
-}
-
-function initSmoothScroll() {
-  if (prefersReduced) return;
-  if (!window.gsap || !window.ScrollTrigger || !window.ScrollSmoother) return;
-  if (
-    document.querySelector("#smooth-wrapper") &&
-    document.querySelector("#smooth-content")
-  ) {
-    gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
-    smoother = ScrollSmoother.create({
-      wrapper: "#smooth-wrapper",
-      content: "#smooth-content",
-      smooth: 1.1,
-      effects: false,
-      smoothTouch: 0.1,
-      normalizeScroll: true,
-      ignoreMobileResize: true,
-    });
-    document.documentElement.classList.add("has-smooth-scroll");
-  }
-}
-
 /* Page curtain transitions */
 function initPageTransitions() {
   const curtain = document.querySelector(".page-curtain");
@@ -77,12 +50,9 @@ function initPageTransitions() {
 function initHeader() {
   const header = document.querySelector(".site-header");
   if (!header) return;
-  const onScroll = () => header.classList.toggle("scrolled", getScrollY() > 24);
+  const onScroll = () =>
+    header.classList.toggle("scrolled", window.scrollY > 24);
   onScroll();
-  if (window.ScrollTrigger) {
-    ScrollTrigger.addEventListener("scrollEnd", onScroll);
-    ScrollTrigger.addEventListener("refresh", onScroll);
-  }
   window.addEventListener("scroll", onScroll, { passive: true });
 }
 
@@ -97,12 +67,7 @@ function initMenu() {
     btn.classList.toggle("open", isOpen);
     nav.classList.toggle("open", isOpen);
     btn.setAttribute("aria-expanded", String(isOpen));
-    if (smoother) {
-      smoother.paused(isOpen);
-    } else {
-      document.body.style.overflow = isOpen ? "hidden" : "";
-    }
-    document.body.style.paddingRight = "";
+    document.body.style.overflow = isOpen ? "hidden" : "";
   };
   btn.addEventListener("click", () => toggle());
   nav
@@ -296,7 +261,7 @@ function initYear() {
 
 function initAll() {
   initPageTransitions();
-  initSmoothScroll();
+
   initHeader();
   initMenu();
   initReveal();

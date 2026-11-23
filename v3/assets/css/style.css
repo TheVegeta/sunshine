@@ -26,11 +26,6 @@ body {
 body.loading {
   overflow-y: scroll;
 }
-html.has-smooth-scroll,
-html.has-smooth-scroll body {
-  overflow: hidden;
-  scrollbar-gutter: auto;
-}
 ::selection {
   background: rgba(192, 106, 82, 0.22);
   color: var(--ink);
