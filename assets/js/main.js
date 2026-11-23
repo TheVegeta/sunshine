@@ -54,6 +54,7 @@ function initMenu() {
     nav.classList.toggle('open', isOpen);
     btn.setAttribute('aria-expanded', String(isOpen));
     document.body.style.overflow = isOpen ? 'hidden' : '';
+    document.body.style.paddingRight = '';
   };
   btn.addEventListener('click', () => toggle());
   nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggle(false)));
