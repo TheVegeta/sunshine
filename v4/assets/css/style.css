@@ -1,0 +1,876 @@
+/* Sunshine Jewellery — art direction
+   One system: warm paper, deep ink, antique gold. Tailwind Play supplies the
+   utilities; this file owns the container, the screen rhythm, the frames, the
+   motion layer and the details utilities cannot express cleanly. */
+
+/* Preloaded local faces: no late font swap, so no text reflow after first paint. */
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: normal;
+  font-weight: 400 500;
+  font-display: swap;
+  src: url("../fonts/cormorant-garamond-latin.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("../fonts/plus-jakarta-sans-latin.woff2") format("woff2");
+}
+
+:root {
+  --alabaster: #faf7f2;
+  --obsidian: #1a1816;
+  --champagne: #c5a059;
+  --sand: #e8e1d5;
+  --gold-deep: #8a6d2f;
+  --gold-light: #d9b878;
+  --verdigris: #243a35;
+  --ink-soft: #544e47;
+  --paper: #faf7f2;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --nav: 76px;
+  --hgap: 40px;
+  --hpadb: 24px;
+  --padt: 104px;
+  --padb: 72px;
+  --gut: 80px;
+  --container: 1280px;
+  --col-gap: 24px;
+}
+
+@media (max-width: 1279px) {
+  :root {
+    --gut: 48px;
+    --padt: 96px;
+    --padb: 64px;
+  }
+}
+@media (max-width: 639px) {
+  :root {
+    --nav: 56px;
+    --gut: 24px;
+    --hgap: 28px;
+    --hpadb: 20px;
+    --padt: 80px;
+    --padb: 48px;
+    --col-gap: 16px;
+  }
+}
+
+html {
+  scroll-behavior: auto;
+  scroll-padding-top: var(--nav);
+}
+body {
+  background: var(--paper);
+  color: var(--obsidian);
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+::selection {
+  background: var(--champagne);
+  color: var(--obsidian);
+}
+:focus-visible {
+  outline: 2px solid var(--gold-deep) !important;
+  outline-offset: 3px !important;
+  border-radius: 2px;
+}
+
+/* One container on the nav, every section and the close. */
+.wrap {
+  position: relative;
+  width: min(calc(100% - var(--gut) * 2), var(--container));
+  margin-inline: auto;
+}
+
+/* A quiet catalogue folio runs down the outside edge of every chapter. */
+main {
+  counter-reset: v4-folio;
+}
+main > section {
+  counter-increment: v4-folio;
+}
+main > section::before {
+  content: "No. " counter(v4-folio, decimal-leading-zero);
+  position: absolute;
+  top: calc(var(--padt) + 2px);
+  right: max(12px, calc((100vw - min(calc(100vw - var(--gut) * 2), var(--container))) / 2 - 28px));
+  writing-mode: vertical-rl;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+/* The nav floats over the hero, so the first screen belongs to the story. */
+header.nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 50;
+  height: var(--nav);
+}
+.skip-link {
+  position: absolute;
+  left: 0;
+  top: -100px;
+  z-index: 200;
+  max-width: 100%;
+  padding: 12px 18px;
+  background: var(--obsidian);
+  color: #fff;
+  transition: top 0.2s var(--ease);
+}
+.skip-link:focus {
+  top: calc(100% + 8px);
+}
+
+/* ------------------------------------------------------------------ screens
+   A section is exactly one or two screens tall. Its content must fit inside
+   its padding. On a phone it grows rather than lays its last rows over the
+   next section, with --hm deciding how many screens it asks for. */
+main > section,
+footer.closing {
+  position: relative;
+  box-sizing: border-box;
+  height: calc(var(--h, 1) * 100svh);
+  padding: var(--padt) 0 var(--padb);
+}
+main > section > .wrap,
+footer.closing > .wrap {
+  height: 100%;
+}
+@media (min-width: 640px) and (max-width: 1279px) {
+  main > section,
+  footer.closing {
+    height: auto;
+    min-height: calc(var(--h, 1) * 100svh);
+  }
+}
+@media (max-width: 639px) {
+  main > section,
+  footer.closing {
+    height: auto;
+    min-height: calc(var(--hm, var(--h, 1)) * 100lvh);
+  }
+}
+
+/* The hero is always exactly the first screen; the nav sits over its top. */
+main > section.hero {
+  height: 100svh;
+  min-height: 0;
+  padding: calc(var(--nav) + var(--hgap)) 0 var(--hpadb);
+}
+main > section.hero > .wrap {
+  height: 100%;
+}
+main > section.hero .hero-enter h1 {
+  font-size: clamp(3.6rem, 7.4vw, 7.4rem) !important;
+  line-height: 0.9 !important;
+  letter-spacing: -0.045em !important;
+  text-wrap: balance;
+}
+@media (max-width: 639px) {
+  .section-title {
+    font-size: clamp(2.1rem, 9vw, 2.5rem) !important;
+  }
+  main > section.hero .hero-enter h1 {
+    font-size: clamp(2.5rem, 10.5vw, 3.2rem) !important;
+    line-height: 0.98 !important;
+  }
+  main > section.hero .hero-enter p {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    margin-top: 18px !important;
+  }
+  main > section.hero .hero-enter > div {
+    margin-top: 22px !important;
+  }
+  .product-card .media {
+    aspect-ratio: 16 / 10 !important;
+  }
+  footer.closing > .wrap > .grid {
+    gap: 28px !important;
+  }
+  footer.closing .mt-14 {
+    margin-top: 18px !important;
+  }
+  footer.closing {
+    padding-top: 56px !important;
+    padding-bottom: 32px !important;
+  }
+  footer.closing .closing-inner > .grid {
+    gap: 14px !important;
+  }
+  footer.closing .closing-inner h2,
+  footer.closing .closing-inner .text-4xl {
+    font-size: 2rem !important;
+  }
+  footer.closing .closing-inner form.mt-6 {
+    margin-top: 14px !important;
+  }
+  footer.closing .space-y-3 > * + * {
+    margin-top: 4px !important;
+  }
+  footer.closing .field label {
+    margin-bottom: 4px;
+  }
+  footer.closing .form-status {
+    min-height: 0;
+    margin-top: 4px;
+  }
+  footer.closing .field input {
+    padding: 8px 12px;
+  }
+  footer.closing .btn-gold {
+    min-height: 44px;
+    padding: 8px 20px;
+  }
+  main > section::before {
+    display: none;
+  }
+  main > section.hero {
+    height: auto;
+    min-height: 100svh;
+  }
+  main > section.hero > .wrap {
+    height: auto;
+  }
+}
+
+/* The detail page carries a gallery and a purchase column: let that first
+   screen grow with its content instead of laying the form over the next band. */
+main > section.product-hero {
+  height: auto;
+  min-height: 100svh;
+}
+main > section.product-hero > .wrap {
+  height: auto;
+}
+@media (max-width: 639px) {
+  main > section.product-hero {
+    padding-top: calc(var(--nav) + 16px);
+  }
+  main > section.product-hero nav[aria-label="Breadcrumb"] {
+    margin-bottom: 20px !important;
+  }
+  main > section.product-hero .grid.gap-12 > div:first-child > .media {
+    aspect-ratio: 1 / 1 !important;
+  }
+}
+
+/* Content-led sections keep the one-screen rhythm but grow with their copy.
+   A short section must not be stretched to two or three mostly empty screens. */
+main > section.grow {
+  height: auto;
+  min-height: 100svh;
+}
+@media (max-width: 639px) {
+  main > section.grow {
+    min-height: 100lvh;
+  }
+}
+main > section.grow > .wrap {
+  height: auto;
+}
+/* A short text-only band should end with its content, not hang in a full
+   empty screen before the next ground change. */
+main > section.compact {
+  min-height: 0;
+}
+
+/* Every two-column composition shares one split line: left ends a gutter
+   before the right starts. Top aligned on desktop, stacked on a phone. */
+.split.grid {
+  align-items: start;
+  align-content: start;
+}
+@media (max-width: 639px) {
+  .split.grid {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  .split.grid > * {
+    width: 100%;
+  }
+}
+
+.font-display {
+  font-family: "Cormorant Garamond", Georgia, serif;
+}
+
+/* The quiet thread through the whole site. No leading rule: text starts on
+   the container line, as every other block does. */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+}
+.eyebrow::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  flex: none;
+  background: currentColor;
+  transform: rotate(45deg);
+}
+.section-title {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(2.6rem, 4.6vw, 4.4rem);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  font-weight: 400;
+  margin: 0;
+  text-wrap: balance;
+}
+.section-lead {
+  max-width: 52ch;
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--ink-soft);
+  margin: 22px 0 0;
+}
+
+/* Navigation: one link size, one underline, 44px touch targets. */
+.nav-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  height: var(--nav);
+}
+.nav-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 14px;
+  color: inherit;
+  text-decoration: none;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  width: 100%;
+  height: 1px;
+  background: var(--champagne);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.45s var(--ease);
+}
+.nav-link:hover::after,
+.nav-link:focus-visible::after,
+.nav-link[aria-current="page"]::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 27px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: inherit;
+  text-decoration: none;
+}
+.bag-trigger {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+.menu-toggle {
+  min-height: 44px;
+}
+
+/* One button pair. Hover steps up, click presses down. */
+.btn-gold,
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: 48px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition:
+    transform 0.25s var(--ease),
+    box-shadow 0.25s var(--ease),
+    background-color 0.25s var(--ease);
+}
+.btn-gold {
+  background: var(--champagne);
+  color: var(--obsidian);
+}
+.btn-outline {
+  border: 1px solid var(--sand);
+  color: var(--obsidian);
+  background: transparent;
+}
+.btn-gold:hover,
+.btn-outline:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px -20px rgba(138, 109, 47, 0.85);
+}
+.btn-outline:hover {
+  background: rgba(232, 225, 213, 0.45);
+}
+.btn-gold:active,
+.btn-outline:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* Frames and one warm sheen on hover. */
+.arched {
+  border-radius: 240px 240px 4px 4px;
+}
+.pill-frame {
+  border-radius: 999px 999px 4px 4px;
+}
+.media {
+  position: relative;
+  overflow: hidden;
+  background: var(--sand);
+}
+button.media {
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+}
+.media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s var(--ease);
+}
+.media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(105deg, transparent 34%, rgba(197, 160, 89, 0.24) 48%, transparent 62%);
+  transform: translateX(-120%);
+  transition: transform 0.9s var(--ease);
+}
+a:hover .media img,
+button:hover .media img,
+.media:hover img {
+  transform: scale(1.04);
+}
+a:hover .media::after,
+button:hover .media::after,
+.media:hover::after {
+  transform: translateX(120%);
+}
+
+/* A product is named under its photograph with air, never a divider. */
+.product-card h3 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 26px;
+  line-height: 1.1;
+  font-weight: 400;
+  margin: 0;
+}
+.product-card__meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.parallax {
+  transform: translate3d(var(--px, 0px), var(--py, 0px), 0);
+  transition: transform 0.5s var(--ease);
+}
+
+/* Shared hero wrapper. Every page's own grid is supplied by its markup. */
+.hero-text {
+  position: relative;
+  height: 100%;
+}
+
+/* Home page only: a true half-and-half composition — a solid paper column for
+   the words and an unobstructed photograph beside it. No gradient, no card. */
+.hero-text.home-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  column-gap: var(--hgap);
+}
+.home-hero .hero-copy {
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  padding: 0 16px 0 0;
+  background: var(--paper);
+}
+.home-hero .hero-stage {
+  grid-column: 2;
+  grid-row: 1;
+  position: relative;
+  inset: auto;
+  height: 100%;
+  min-width: 0;
+}
+.home-hero .hero-stage > img {
+  object-position: center;
+}
+.home-hero .hero-copy .eyebrow {
+  color: #765a26;
+}
+@media (max-width: 639px) {
+  .home-hero {
+    display: block;
+  }
+  .home-hero .hero-stage {
+    height: 260px !important;
+  }
+  .home-hero .hero-copy {
+    display: block;
+    width: 100%;
+    margin-top: 22px;
+    padding: 0;
+    background: transparent;
+  }
+  .home-hero .hero-copy .btn-gold,
+  .home-hero .hero-copy .btn-outline {
+    width: 100%;
+  }
+}
+
+/* The hero enters once on load. Nothing fades in on scroll. */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+html.m-enter:not(.m-enter-done) .hero-enter > * {
+  opacity: 0;
+}
+.hero-enter > * {
+  animation: rise 0.9s var(--ease) both;
+  animation-delay: calc(var(--i, 0) * 110ms);
+}
+
+/* The dark chapter: one statement in verdigris and gold, beside its photograph. */
+.statement {
+  background: var(--verdigris);
+  color: #f4efe5;
+}
+.statement::before {
+  color: var(--gold-light);
+  opacity: 1;
+}
+.statement .eyebrow {
+  color: var(--gold-light);
+}
+.statement__quote {
+  max-width: 18ch;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(2.6rem, 4.4vw, 4.2rem);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+  font-weight: 400;
+  margin: 0;
+}
+.statement__quote strong {
+  position: relative;
+  display: inline-block;
+  color: var(--champagne);
+  font-weight: 400;
+}
+.statement__quote strong::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.04em;
+  height: 2px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: underline 1s var(--ease) 0.5s forwards;
+}
+@keyframes underline {
+  to {
+    transform: scaleX(1);
+  }
+}
+.statement__aside {
+  max-width: 36ch;
+  margin: 22px 0 0;
+  font-size: 14px;
+  line-height: 1.8;
+  color: rgba(244, 239, 229, 0.76);
+}
+.statement > .wrap {
+  height: 100%;
+}
+.statement .split.grid {
+  height: 100%;
+  align-items: stretch;
+  align-content: stretch;
+}
+.statement .media {
+  min-height: 0;
+  height: 100%;
+  max-height: 74vh;
+}
+@media (max-width: 639px) {
+  .statement .media {
+    height: 42vh;
+    max-height: none;
+  }
+  .statement__quote {
+    max-width: none;
+    font-size: clamp(2rem, 8vw, 2.25rem) !important;
+  }
+}
+
+/* Native <dialog> handles focus trapping and Escape. */
+dialog {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: inherit;
+}
+dialog::backdrop {
+  background: rgba(26, 24, 22, 0.46);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  transition: opacity 0.35s var(--ease);
+}
+dialog.is-open::backdrop {
+  opacity: 1;
+}
+body.dialog-open {
+  overflow: hidden;
+}
+.bag-drawer {
+  position: fixed;
+  inset: 0 0 0 auto;
+  height: 100dvh;
+  width: min(440px, 100%);
+  margin: 0;
+  background: var(--paper);
+  box-shadow: -20px 0 60px -40px rgba(26, 24, 22, 0.5);
+  transform: translateX(100%);
+  transition: transform 0.45s var(--ease);
+}
+.bag-drawer.is-open {
+  transform: none;
+}
+.modal {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  width: min(680px, calc(100% - 32px));
+  max-height: calc(100dvh - 48px);
+  overflow: auto;
+  background: var(--paper);
+  opacity: 0;
+  transform: translateY(18px) scale(0.985);
+  transition:
+    opacity 0.3s var(--ease),
+    transform 0.4s var(--ease);
+}
+.modal.is-open {
+  opacity: 1;
+  transform: none;
+}
+
+details.accordion {
+  border-bottom: 1px solid var(--sand);
+}
+details.accordion summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 56px;
+  font-weight: 500;
+  cursor: pointer;
+}
+details.accordion summary::-webkit-details-marker {
+  display: none;
+}
+details.accordion summary .chev {
+  transition: transform 0.3s var(--ease);
+}
+details.accordion[open] summary .chev {
+  transform: rotate(180deg);
+}
+details.accordion .accordion__body {
+  padding: 0 0 20px;
+  color: var(--ink-soft);
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.swatch {
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1px solid rgba(26, 24, 22, 0.16);
+  transition:
+    transform 0.25s var(--ease),
+    box-shadow 0.25s var(--ease);
+}
+.swatch:hover {
+  transform: scale(1.08);
+}
+input.peer:checked + .swatch {
+  box-shadow:
+    0 0 0 2px var(--paper),
+    0 0 0 3px var(--gold-deep);
+}
+input.peer:focus-visible + .swatch {
+  outline: 2px solid var(--gold-deep);
+  outline-offset: 4px;
+  box-shadow:
+    0 0 0 4px var(--paper),
+    0 0 0 6px var(--gold-deep);
+}
+label.cursor-pointer:has(input.peer:focus-visible) {
+  outline: 2px solid var(--gold-deep);
+  outline-offset: 4px;
+  border-radius: 999px;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 13px;
+  font-weight: 500;
+}
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  border: 0;
+  border-radius: 0;
+  background: rgba(232, 225, 213, 0.42);
+  padding: 12px 14px;
+  font: inherit;
+  font-size: 15px;
+  color: inherit;
+}
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: 2px solid var(--gold-deep);
+  outline-offset: 3px;
+  border-color: var(--gold-deep);
+}
+.field [aria-invalid="true"] {
+  border-color: #a33b2a;
+}
+.field__error {
+  margin-top: 6px;
+  color: #a33b2a;
+  font-size: 12px;
+}
+.form-status {
+  min-height: 1.25rem;
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--gold-deep);
+}
+
+@media (max-width: 639px) {
+  .wordmark,
+  .bag-trigger,
+  .menu-toggle,
+  .nav-link,
+  .btn-gold,
+  .btn-outline {
+    min-height: 44px;
+  }
+  /* One width rule for every primary action on a phone; filter pills opt out. */
+  .btn-gold,
+  .btn-outline {
+    width: 100%;
+  }
+  [data-filter] {
+    width: auto !important;
+  }
+  footer.closing a.underline {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  .field input,
+  .field select,
+  .field textarea {
+    min-height: 44px;
+  }
+}
+@media (max-width: 359px) {
+  .nav-row {
+    gap: 10px;
+  }
+  .nav-row .wordmark {
+    font-size: 21px;
+  }
+  .nav-row .bag-trigger {
+    gap: 5px;
+    font-size: 12px;
+  }
+  .nav-row .bag-trigger [data-bag-count] {
+    width: 20px;
+    height: 20px;
+    margin-left: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .statement__quote strong::after {
+    transform: scaleX(1);
+  }
+}
