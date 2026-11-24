@@ -876,14 +876,14 @@ label.cursor-pointer:has(input.peer:focus-visible) {
 }
 
 /* --------------------------------------------------------------------------
-   Centred editorial heroes.
-   The photograph leads and the words sit beneath it. One spacing scale serves
-   these heroes and every split composition, so the rhythm never drifts.
+   Half-and-half editorial heroes.
+   Image and copy share the row evenly; the copy is centred in its half.
+   Sections are sized by their content, never by viewport-height multiples.
    -------------------------------------------------------------------------- */
 :root {
-  --stack-gap: 36px;
+  --stack-gap: 32px;
   --stack-space: 18px;
-  --stack-space-lg: 30px;
+  --stack-space-lg: 28px;
 }
 @media (max-width: 639px) {
   :root {
@@ -899,67 +899,125 @@ label.cursor-pointer:has(input.peer:focus-visible) {
   row-gap: var(--stack-gap);
 }
 
-main > section.hero-stacked {
-  display: flex;
-  align-items: center;
-  height: auto;
-  min-height: 100svh;
-  padding-bottom: var(--padb);
+/* No forced screens: every section ends where its content ends. */
+main > section,
+footer.closing {
+  height: auto !important;
+  min-height: 0 !important;
+  padding-top: clamp(64px, 7vw, 96px) !important;
+  padding-bottom: clamp(48px, 5vw, 72px) !important;
 }
-main > section.hero-stacked > .wrap {
+main > section > .wrap,
+footer.closing > .wrap {
   height: auto;
+}
+main > section.hero,
+main > section.product-hero {
+  padding-top: calc(var(--nav) + 24px) !important;
+  padding-bottom: 48px !important;
+}
+.statement > .wrap,
+.statement .split.grid {
+  height: auto;
+}
+.statement .media {
+  height: clamp(300px, 42vh, 440px);
+  max-height: none;
 }
 
-.hero-text.stack {
-  display: flex;
-  flex-direction: column;
+/* Home: image and words already share the row - centre the words in theirs. */
+.home-hero .hero-copy {
   align-items: center;
-  gap: var(--stack-gap);
+  text-align: center;
+}
+.home-hero .hero-copy > * {
+  margin-inline: auto;
+}
+.home-hero .hero-stage {
+  height: clamp(320px, 52vh, 520px);
+}
+main > section.hero .home-hero .hero-copy h1 {
+  font-size: clamp(2.6rem, 4.6vw, 4.4rem) !important;
+  line-height: 1 !important;
+  letter-spacing: -0.035em !important;
+}
+
+/* Editorial heroes: 50/50 columns, both centred. */
+main > section.hero-halves {
+  display: block;
+}
+.hero-text.halves {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: var(--hgap);
   height: auto;
 }
-.hero-text.stack > .media {
+.hero-text.halves > .media {
   width: 100%;
-  height: clamp(220px, 38vh, 400px);
+  height: clamp(320px, 52vh, 520px);
   aspect-ratio: auto !important;
   animation: rise 0.9s var(--ease) both;
 }
-.hero-text.stack > .hero-enter {
-  width: 100%;
-  max-width: 58ch;
+.hero-text.halves > .hero-enter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  height: 100%;
 }
-.hero-text.stack > .hero-enter > * {
-  margin-inline: auto;
-}
-.hero-text.stack > .hero-enter > * + * {
+.hero-text.halves > .hero-enter > * + * {
   margin-top: var(--stack-space) !important;
 }
-.hero-text.stack > .hero-enter > .btn-gold,
-.hero-text.stack > .hero-enter > .btn-outline {
+.hero-text.halves > .hero-enter > .btn-gold,
+.hero-text.halves > .hero-enter > .btn-outline {
   margin-top: var(--stack-space-lg) !important;
 }
-.hero-text.stack .hero-lead {
-  max-width: 48ch;
+.hero-text.halves .hero-lead {
+  max-width: 46ch;
   font-size: 15px;
   line-height: 1.75;
   color: var(--ink-soft);
 }
-.hero-text.stack .hero-note {
+.hero-text.halves .hero-note {
   font-size: 13px;
   letter-spacing: 0.02em;
   color: var(--gold-deep);
 }
-main > section.hero-stacked .hero-enter h1 {
-  font-size: clamp(2.6rem, 5vw, 4.4rem) !important;
+main > section.hero-halves .hero-enter h1 {
+  font-size: clamp(2.4rem, 4.4vw, 4rem) !important;
   line-height: 1 !important;
   letter-spacing: -0.03em !important;
 }
+
 @media (max-width: 639px) {
-  main > section.hero-stacked .hero-enter h1 {
-    font-size: clamp(2.4rem, 9.5vw, 3.1rem) !important;
+  main > section,
+  footer.closing {
+    padding-top: 56px !important;
+    padding-bottom: 40px !important;
+  }
+  main > section.hero,
+  main > section.product-hero {
+    padding-top: calc(var(--nav) + 20px) !important;
+    padding-bottom: 36px !important;
+  }
+  .hero-text.halves {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--stack-gap);
+  }
+  .hero-text.halves > .media,
+  .home-hero .hero-stage {
+    height: 260px;
+  }
+  main > section.hero .home-hero .hero-copy h1 {
+    font-size: clamp(2.1rem, 8.5vw, 2.8rem) !important;
+  }
+  main > section.hero-halves .hero-enter h1 {
+    font-size: clamp(2.2rem, 9vw, 2.9rem) !important;
     line-height: 1.02 !important;
   }
-  .hero-text.stack > .media {
-    height: 220px;
+  .statement .media {
+    height: 240px;
   }
 }
