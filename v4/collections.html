@@ -107,32 +107,26 @@
       </nav>
     </header>
     <main id="main-content">
-      <!-- Editorial collection header. -->
-      <section data-enter style="--h: 1; --hm: 1" aria-labelledby="collection-title">
+      <!-- Editorial collection header: the photograph leads, the words sit beneath it. -->
+      <section class="hero hero-stacked" data-enter style="--h: 1; --hm: 2" aria-labelledby="collection-title">
         <div class="wrap">
-          <div class="hero-text split grid grid-cols-12 items-start gap-6">
-            <div class="hero-enter lg:col-span-6">
-              <p class="eyebrow mb-5" style="--i: 0">The Solstice collection</p>
-              <h1
-                id="collection-title"
-                class="font-display text-[clamp(3rem,6vw,5.8rem)] leading-[.96] tracking-[-.03em]"
-                style="--i: 1"
-              >
+          <div class="hero-text stack">
+            <div class="media arched" style="--i: 0">
+              <img
+                src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=900&q=85"
+                alt="An arrangement of fine gold jewellery"
+                fetchpriority="high"
+              />
+            </div>
+            <div class="hero-enter">
+              <p class="eyebrow" style="--i: 1">The Solstice collection</p>
+              <h1 id="collection-title" class="font-display" style="--i: 2">
                 Eight pieces in gold
               </h1>
-              <a class="btn-outline mt-8 inline-flex" href="#shop">See all eight</a>
-            </div>
-            <div class="flex flex-col justify-end lg:col-span-6 lg:col-start-7" style="--i: 2">
-              <p class="text-[15px] leading-7 text-[#544e47]">
+              <p class="hero-lead" style="--i: 3">
                 Eight forms, cast in short runs and finished at the bench. Choose by shape, not by season.
               </p>
-              <div class="media pill-frame mt-7 aspect-[4/3]">
-                <img
-                  src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=900&q=85"
-                  alt="An arrangement of fine gold jewellery"
-                  fetchpriority="high"
-                />
-              </div>
+              <a class="btn-outline" href="#shop" style="--i: 4">See all eight</a>
             </div>
           </div>
         </div>

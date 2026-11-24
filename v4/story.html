@@ -107,31 +107,27 @@
       </nav>
     </header>
     <main id="main-content">
-      <!-- Workshop hero: one hard fact, one image. -->
-      <section data-enter style="--h: 1; --hm: 1" aria-labelledby="atelier-title">
+      <!-- Workshop hero: the bench leads, the words sit beneath it. -->
+      <section class="hero hero-stacked" data-enter style="--h: 1; --hm: 2" aria-labelledby="story-title">
         <div class="wrap">
-          <div class="hero-text split grid grid-cols-12 items-start gap-6">
-            <div class="hero-enter lg:col-span-5">
-              <p class="eyebrow mb-5" style="--i: 0">Wax, gold, polish</p>
-              <h1
-                id="atelier-title"
-                class="font-display text-[clamp(3rem,6vw,5.8rem)] leading-[.96] tracking-[-.03em]"
-                style="--i: 1"
-              >
-                Four stages, one bench
-              </h1>
-              <p class="mt-7 max-w-md text-[15px] leading-7 text-[#544e47]" style="--i: 2">
-                Every piece starts as wax in Namita's hands and leaves as solid gold. Short runs mean she can check each
-                surface herself.
-              </p>
-              <a class="btn-gold mt-8" href="contact.html" style="--i: 3">Talk about a custom piece</a>
-            </div>
-            <div class="media arched aspect-[5/4] lg:col-span-7 lg:col-start-6">
+          <div class="hero-text stack">
+            <div class="media arched" style="--i: 0">
               <img
                 src="https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=1400&q=85"
                 alt="Jeweller carving a wax model at the bench"
                 fetchpriority="high"
               />
+            </div>
+            <div class="hero-enter">
+              <p class="eyebrow" style="--i: 1">Wax, gold, polish</p>
+              <h1 id="story-title" class="font-display" style="--i: 2">
+                Four stages, one bench
+              </h1>
+              <p class="hero-lead" style="--i: 3">
+                Every piece starts as wax in Namita's hands and leaves as solid gold. Short runs mean she can check each
+                surface herself.
+              </p>
+              <a class="btn-gold" href="contact.html" style="--i: 4">Talk about a custom piece</a>
             </div>
           </div>
         </div>

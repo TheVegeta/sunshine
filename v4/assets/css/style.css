@@ -874,3 +874,92 @@ label.cursor-pointer:has(input.peer:focus-visible) {
     transform: scaleX(1);
   }
 }
+
+/* --------------------------------------------------------------------------
+   Centred editorial heroes.
+   The photograph leads and the words sit beneath it. One spacing scale serves
+   these heroes and every split composition, so the rhythm never drifts.
+   -------------------------------------------------------------------------- */
+:root {
+  --stack-gap: 36px;
+  --stack-space: 18px;
+  --stack-space-lg: 30px;
+}
+@media (max-width: 639px) {
+  :root {
+    --stack-gap: 24px;
+    --stack-space: 14px;
+    --stack-space-lg: 22px;
+  }
+}
+
+/* One gap for every two-column composition, on every screen. */
+.split.grid {
+  column-gap: var(--hgap);
+  row-gap: var(--stack-gap);
+}
+
+main > section.hero-stacked {
+  display: flex;
+  align-items: center;
+  height: auto;
+  min-height: 100svh;
+  padding-bottom: var(--padb);
+}
+main > section.hero-stacked > .wrap {
+  height: auto;
+}
+
+.hero-text.stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--stack-gap);
+  height: auto;
+}
+.hero-text.stack > .media {
+  width: 100%;
+  height: clamp(220px, 38vh, 400px);
+  aspect-ratio: auto !important;
+  animation: rise 0.9s var(--ease) both;
+}
+.hero-text.stack > .hero-enter {
+  width: 100%;
+  max-width: 58ch;
+  text-align: center;
+}
+.hero-text.stack > .hero-enter > * {
+  margin-inline: auto;
+}
+.hero-text.stack > .hero-enter > * + * {
+  margin-top: var(--stack-space) !important;
+}
+.hero-text.stack > .hero-enter > .btn-gold,
+.hero-text.stack > .hero-enter > .btn-outline {
+  margin-top: var(--stack-space-lg) !important;
+}
+.hero-text.stack .hero-lead {
+  max-width: 48ch;
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--ink-soft);
+}
+.hero-text.stack .hero-note {
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  color: var(--gold-deep);
+}
+main > section.hero-stacked .hero-enter h1 {
+  font-size: clamp(2.6rem, 5vw, 4.4rem) !important;
+  line-height: 1 !important;
+  letter-spacing: -0.03em !important;
+}
+@media (max-width: 639px) {
+  main > section.hero-stacked .hero-enter h1 {
+    font-size: clamp(2.4rem, 9.5vw, 3.1rem) !important;
+    line-height: 1.02 !important;
+  }
+  .hero-text.stack > .media {
+    height: 220px;
+  }
+}

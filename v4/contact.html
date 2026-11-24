@@ -107,33 +107,27 @@
       </nav>
     </header>
     <main id="main-content">
-      <!-- Appointment header. -->
-      <section data-enter style="--h: 1; --hm: 1" aria-labelledby="contact-title">
+      <!-- Appointment header: the viewing room leads, the words sit beneath it. -->
+      <section class="hero hero-stacked" data-enter style="--h: 1; --hm: 2" aria-labelledby="contact-title">
         <div class="wrap">
-          <div class="hero-text split grid grid-cols-12 items-start gap-6">
-            <div class="hero-enter lg:col-span-6">
-              <p class="eyebrow mb-5" style="--i: 0">By appointment</p>
-              <h1
-                id="contact-title"
-                class="font-display text-[clamp(3rem,6vw,5.8rem)] leading-[.96] tracking-[-.03em]"
-                style="--i: 1"
-              >
+          <div class="hero-text stack">
+            <div class="media arched" style="--i: 0">
+              <img
+                src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=900&q=85"
+                alt="Fine gold jewellery ready for a private viewing"
+                fetchpriority="high"
+              />
+            </div>
+            <div class="hero-enter">
+              <p class="eyebrow" style="--i: 1">By appointment</p>
+              <h1 id="contact-title" class="font-display" style="--i: 2">
                 See the pieces up close
               </h1>
-              <a class="btn-outline mt-8 inline-flex" href="#booking">Request a time</a>
-            </div>
-            <div class="lg:col-span-6 lg:col-start-7" style="--i: 2">
-              <p class="text-[15px] leading-7 text-[#544e47]">
+              <p class="hero-lead" style="--i: 3">
                 Meet Namita in person or on a call. Bring a piece you already love, or start with an empty page.
               </p>
-              <p class="mt-4 text-sm text-gold-deep" data-assumed>Monday to Friday, 10 until 6</p>
-              <div class="media arched mt-6 aspect-[16/9] sm:aspect-square">
-                <img
-                  src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=900&q=85"
-                  alt="Fine gold jewellery ready for a private viewing"
-                  fetchpriority="high"
-                />
-              </div>
+              <p class="hero-note" style="--i: 4" data-assumed>Monday to Friday, 10 until 6</p>
+              <a class="btn-outline" href="#booking" style="--i: 5">Request a time</a>
             </div>
           </div>
         </div>
